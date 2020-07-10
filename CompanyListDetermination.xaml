@@ -1,0 +1,331 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CompanyListDetermination" this:CompanyListDetermination.CompanyHeader="Company" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="DT_mappingTemp" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="AlphaKey" Type="InArgument(x:String)" />
+    <x:Property Name="AlphaKeyHeader" Type="InArgument(x:String)" />
+    <x:Property Name="CompanyHeader" Type="InArgument(x:String)" />
+    <x:Property Name="ArrayCompany" Type="OutArgument(s:String[])" />
+    <x:Property Name="intCalenderDuration" Type="InArgument(x:Int32)" />
+    <x:Property Name="strGlobalBakeUsername" Type="InArgument(x:String)" />
+    <x:Property Name="strGlobalBakePassword" Type="InArgument(x:String)" />
+    <x:Property Name="strGlobalBakePath" Type="InArgument(x:String)" />
+    <x:Property Name="intCompanySwitchLoc" Type="InArgument(x:Int32)" />
+    <x:Property Name="intVendorAllLoc" Type="InArgument(x:Int32)" />
+    <x:Property Name="ExtractionFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="TransactionHistoryFolderPath" Type="OutArgument(x:String)" />
+    <x:Property Name="strCompanyList" Type="OutArgument(x:String)" />
+    <x:Property Name="ExtractedCompanyName" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1234,1964</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CompanyListDetermination_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CompanyListDetermination" sap:VirtualizedContainerService.HintSize="833,1899" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_table" />
+      <Variable x:TypeArguments="x:Int32" Name="i" />
+      <Variable x:TypeArguments="x:Boolean" Name="loginReq" />
+      <Variable x:TypeArguments="x:Int32" Name="escCount" />
+      <Variable x:TypeArguments="x:Boolean" Name="windowsExist" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="791,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strCompanyList]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="791,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,279" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ReadRange AddHeaders="True" DataTable="[DT_mappingTemp]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Supplier_Mapping_Template" WorkbookPath="C:\Users\rpa\Documents\Testing\BotSideFiles\Templates\Supplier mapping template.xlsx">
+            <ui:ReadRange.Range>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </ui:ReadRange.Range>
+          </ui:ReadRange>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:FilterDataTable DataTable="[DT_mappingTemp]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="791,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_table]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">[AlphaKeyHeader]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:String">[AlphaKey]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <x:Null />
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <ui:ForEachRow CurrentIndex="[i]" DataTable="[DT_table]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="791,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="CompanyName" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[CompanyName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[row(CompanyHeader).ToString.Trim]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strCompanyList]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[strCompanyList+CompanyName+","]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <Assign sap:VirtualizedContainerService.HintSize="791,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[ArrayCompany]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[strCompanyList.Split({","},StringSplitOptions.None)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ImageFound DisplayName="Image Exists 'jade.exe [1]'" Found="[loginReq]" sap:VirtualizedContainerService.HintSize="791,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+      <ui:ImageFound.Image>
+        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIUAAAAWCAYAAADuKF/RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH8SURBVGhD7ZcBjoQgDEU5lwfiPJzGy3iLuQALBaSUUlx0J27Sl5CIMO0HvtUxXlEIagqlQ02hdKgplA41hdJBTLF7a4w3qG3u8P5wfjObj5dpTrl+GppfyNNoeiOHdxtay+bCnf8BY4rZRv+1KWrsw20PbOZf6h0AhjXe7rkfCfcc7l/m+/pfbYpncn17U1OFaAxxi2/rv2wKfJ/MyU9FKpM2jN6B5u/zWhuqB+RhNDl7lmt47cH9oi20clKsZhp/EYgt/R7rjuB++8qx+xX92IA51l7H4xhU3NxP+yIz/aZICbHw0XXs2ktJx7Tx2tdH0lbjUx1Bb9mdoIMedpVF+qdmGn+ReGDiK0/QE3XXE85w85ERwCBlPI2dewb7gNbU7MuYe5WCOBZat6jfkBd1NrwAqm2gCRDGhpppjEUg/mKlyNpaY3L62/i75R7eyKzP84Ap5s67jiSajg00AcLYUDONscrsm0LSmijlnj3o15sCrh8ouSeSaDo20hSZjXGa6bwb5LLdGCMcZvr3QUwDc/u80RhJI6///H1jEm6u1Od5+EOzlOJVJNF0TNBE+vFJarSxmqXcC9Ac+DsjmybltjUvvo+qgax/vO55n4eYQlGIKapL2/YG3qhpBboO3N6CVgqlQ02hdKgplA7z+Xy8Nm24aaVQOtQUCsH7H1Kpj0mLoMYOAAAAAElFTkSuQmCC" />
+      </ui:ImageFound.Image>
+      <ui:ImageFound.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="555e4b98-ff0a-4394-897f-f215c15727eb" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*' /&gt;" TimeoutMS="5000">
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:ImageFound.Target>
+    </ui:ImageFound>
+    <If Condition="[not loginReq]" sap:VirtualizedContainerService.HintSize="791,254" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <ui:UiElementExists DisplayName="Element Exists 'jade.exe [1]'" Exists="[windowsExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+          <ui:UiElementExists.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="28ad534b-bc6d-4984-8816-b8ec9a322612" InformativeScreenshot="75f2fb58fc10611d6a68398c6070d92a" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:UiElementExists.Target>
+        </ui:UiElementExists>
+      </If.Then>
+      <If.Else>
+        <ui:UiElementExists DisplayName="Element Exists 'jade.exe [1]'" Exists="[windowsExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+          <ui:UiElementExists.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="28ad534b-bc6d-4984-8816-b8ec9a322612" InformativeScreenshot="75f2fb58fc10611d6a68398c6070d92a" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:UiElementExists.Target>
+        </ui:UiElementExists>
+      </If.Else>
+    </If>
+    <Assign sap:VirtualizedContainerService.HintSize="791,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[escCount]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">0</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[not windowsExist]" sap:VirtualizedContainerService.HintSize="791,659" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Login To Global Bake workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Login To Global Bake.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="Str_Username_Gb">[strGlobalBakeUsername]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Str_Password_Gb">[strGlobalBakePassword]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="SystemException" />
+            <InArgument x:TypeArguments="x:String" x:Key="in_Folder" />
+            <InArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
+            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Out_Config" />
+            <InArgument x:TypeArguments="x:String" x:Key="GlobalBakePath">[strGlobalBakePath]</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </If.Then>
+      <If.Else>
+        <ui:InterruptibleDoWhile Condition="[escCount&lt;10]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,511" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+          <ui:InterruptibleDoWhile.Body>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,346" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'jade.exe [1]'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="esc" KeyModifiers="None">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="12a2e7d4-9c97-4dc5-a2d4-3ba11ccb9090" InformativeScreenshot="2d2486c7837a170b1292ce295a4e73c2" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[escCount]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[escCount+1]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ui:InterruptibleDoWhile.Body>
+        </ui:InterruptibleDoWhile>
+      </If.Else>
+    </If>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke NavigationBetweenCompany workflow" sap:VirtualizedContainerService.HintSize="791,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="NavigationBetweenCompany.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="IntDuration">
+          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCalenderDuration" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="Arr_CompanyList">
+          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ArrayCompany" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="StrVendorAlphaKey">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AlphaKey" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="Int_Loc_SelectCompany">
+          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCompanySwitchLoc" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractionFolderPath" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="intLocVendorAll">
+          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intVendorAllLoc" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="TransactionHistoryFolderPath">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="TransactionHistoryFolderPath" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="ExtractedCompanyName">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedCompanyName" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

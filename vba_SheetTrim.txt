@@ -1,0 +1,24 @@
+Sub Main()
+DoTrim
+End Sub
+
+
+Sub DoTrim()
+Dim cell As Range
+Dim replaceStringChar As String
+Dim replaceStringSpace As String
+Dim wsh As Worksheet
+
+Dim target As Workbook
+Set target = Application.ActiveWorkbook
+
+For Each wsh In target.Sheets
+    With wsh.UsedRange
+        For Each cell In ActiveSheet.UsedRange
+            replaceStringChar = Replace(cell, Chr(160), "")
+            replaceStringSpace = Trim(replaceStringChar)
+            cell = replaceStringSpace
+       Next cell
+    End With
+Next wsh
+End Sub
