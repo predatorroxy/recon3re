@@ -48,7 +48,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1883,5650</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1883,4330</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EmailExtractionSeq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -108,7 +108,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="1893,5585" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="1893,4265" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SOAInvoiceHeader" />
       <Variable x:TypeArguments="x:String" Name="SOADateHeader" />
@@ -1370,7 +1370,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="1851,4672" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="1851,3352" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counter" />
         <Variable x:TypeArguments="x:Boolean" Name="SheetTrimmerFlag" />
@@ -1388,29 +1388,30 @@
           <InArgument x:TypeArguments="x:Int32">0</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1809,4480" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1809,3160" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="ExcelPath" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="1773,4346" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="1773,3026" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="ExcelSheetName" />
                 <Variable x:TypeArguments="x:String" Name="strSOApath" />
+                <Variable x:TypeArguments="ui:WorkbookApplication" Name="ityu" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1731,2645" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="[ExcelPath]">
+              <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1731,413" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" Workbook="[ityu]" WorkbookPath="[ExcelPath]">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1697,2536" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,304" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:List(x:String)" Name="ExcelSheets" />
                       </Sequence.Variables>
@@ -1419,16 +1420,16 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="1655,22" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[ExcelSheets]" />
-                      <If Condition="[ExcelSheets.Count&gt;0]" sap:VirtualizedContainerService.HintSize="1655,2382" sap2010:WorkflowViewState.IdRef="If_28">
+                      <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[ExcelSheets]" />
+                      <If Condition="[ExcelSheets.Count&gt;0]" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_28">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <If Condition="[not ExcelSheets.Count&gt;1]" sap:VirtualizedContainerService.HintSize="1410,2235" sap2010:WorkflowViewState.IdRef="If_29">
+                          <If Condition="[not ExcelSheets.Count&gt;1]" sap:VirtualizedContainerService.HintSize="683,613" sap2010:WorkflowViewState.IdRef="If_29">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1446,14 +1447,14 @@
                               </Assign>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="AssigningFirstSheet" sap:VirtualizedContainerService.HintSize="1103,2088" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                              <Sequence DisplayName="AssigningFirstSheet" sap:VirtualizedContainerService.HintSize="376,466" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1061,91" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Warn" Message="[&quot;More than one excel sheet exist: Read first sheet only&quot;]" />
-                                <Sequence DisplayName="sheet verification" sap:VirtualizedContainerService.HintSize="1061,1865" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Warn" Message="[&quot;More than one excel sheet exist: Read first sheet only&quot;]" />
+                                <Sequence DisplayName="sheet verification" sap:VirtualizedContainerService.HintSize="334,243" sap2010:WorkflowViewState.IdRef="Sequence_42">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="sd:DataTable" Name="dt_temp" />
                                   </Sequence.Variables>
@@ -1462,7 +1463,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="1019,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="sd:DataTable">[dt_temp]</OutArgument>
                                     </Assign.To>
@@ -1470,13 +1471,13 @@
                                       <InArgument x:TypeArguments="sd:DataTable">[new DataTable()]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1019,1673" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[ExcelSheets]">
+                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[ExcelSheets]">
                                     <ui:ForEach.Body>
                                       <ActivityAction x:TypeArguments="x:String">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                                         </ActivityAction.Argument>
-                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="983,1540" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="797,807" sap2010:WorkflowViewState.IdRef="Sequence_41">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="sd:DataTable" Name="dt" />
                                             <Variable x:TypeArguments="x:String" Name="tmepstr" />
@@ -1486,18 +1487,18 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:ClearDataTable DataTable="[dt_temp]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="941,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-                                          <ui:ExcelReadRange AddHeaders="True" DataTable="[dt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="941,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" PreserveFormat="True" SheetName="[item.ToString]">
+                                          <ui:ClearDataTable DataTable="[dt_temp]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+                                          <ui:ExcelReadRange AddHeaders="True" DataTable="[dt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="755,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" PreserveFormat="True" SheetName="[item.ToString]">
                                             <ui:ExcelReadRange.Range>
                                               <InArgument x:TypeArguments="x:String">
                                                 <Literal x:TypeArguments="x:String" Value="" />
                                               </InArgument>
                                             </ui:ExcelReadRange.Range>
                                           </ui:ExcelReadRange>
-                                          <ui:OutputDataTable DataTable="[dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="941,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[tmepstr]" />
-                                          <If Condition="[tmepstr.Trim.ToLower.Contains(SOAUniqueStartHeader.ToLower.Trim)]" sap:VirtualizedContainerService.HintSize="941,1225" sap2010:WorkflowViewState.IdRef="If_31">
+                                          <ui:OutputDataTable DataTable="[dt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[tmepstr]" />
+                                          <If Condition="[tmepstr.Trim.ToLower.Contains(SOAUniqueStartHeader.ToLower.Trim)]" sap:VirtualizedContainerService.HintSize="755,492" sap2010:WorkflowViewState.IdRef="If_31">
                                             <If.Then>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="562,1078" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="376,345" sap2010:WorkflowViewState.IdRef="Sequence_43">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="FirstRowNum" />
                                                 </Sequence.Variables>
@@ -1506,8 +1507,8 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="520,91" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Warn" Message="[&quot;Sheet considered as it contains uniqueIdentifier:  &quot;+item]" />
-                                                <Assign sap:VirtualizedContainerService.HintSize="520,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Warn" Message="[&quot;Sheet considered as it contains uniqueIdentifier:  &quot;+item]" />
+                                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[ExcelSheetName]</OutArgument>
                                                   </Assign.To>
@@ -1515,45 +1516,7 @@
                                                     <InArgument x:TypeArguments="x:String">[item]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign sap:VirtualizedContainerService.HintSize="520,60" sap2010:WorkflowViewState.IdRef="Assign_12">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Boolean">[SheetTrimmerFlag]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                                <ui:ExcelReadRow DisplayName="Read Row" sap:VirtualizedContainerService.HintSize="520,59" sap2010:WorkflowViewState.IdRef="ExcelReadRow_1" Result="[FirstRowNum]" SheetName="[ExcelSheetName]" StartingCell="A1" />
-                                                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="520,494" sap2010:WorkflowViewState.IdRef="ForEach`1_6" Values="[FirstRowNum]">
-                                                  <ui:ForEach.Body>
-                                                    <ActivityAction x:TypeArguments="x:Object">
-                                                      <ActivityAction.Argument>
-                                                        <DelegateInArgument x:TypeArguments="x:Object" Name="rat" />
-                                                      </ActivityAction.Argument>
-                                                      <If Condition="[rat.ToString.Trim.ToLower.Contains(SOAUniqueStartHeader.ToLower.Trim)]" sap:VirtualizedContainerService.HintSize="484,361" sap2010:WorkflowViewState.IdRef="If_34">
-                                                        <If.Then>
-                                                          <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_46">
-                                                            <sap:WorkflowViewStateService.ViewState>
-                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                              </scg:Dictionary>
-                                                            </sap:WorkflowViewStateService.ViewState>
-                                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
-                                                              <Assign.To>
-                                                                <OutArgument x:TypeArguments="x:Boolean">[SheetTrimmerFlag]</OutArgument>
-                                                              </Assign.To>
-                                                              <Assign.Value>
-                                                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                                              </Assign.Value>
-                                                            </Assign>
-                                                            <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_8" />
-                                                          </Sequence>
-                                                        </If.Then>
-                                                      </If>
-                                                    </ActivityAction>
-                                                  </ui:ForEach.Body>
-                                                </ui:ForEach>
-                                                <ui:Break sap:VirtualizedContainerService.HintSize="520,22" sap2010:WorkflowViewState.IdRef="Break_7" />
+                                                <ui:Break sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Break_7" />
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
@@ -1563,6 +1526,12 @@
                                         </Sequence>
                                       </ActivityAction>
                                     </ui:ForEach.Body>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </ui:ForEach>
                                 </Sequence>
                               </Sequence>
@@ -1573,6 +1542,7 @@
                           <Throw Exception="[new BusinessRuleException(&quot;No sheet in excel&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
                         </If.Else>
                       </If>
+                      <ui:ExcelCloseWorkbook DisplayName="Close Workbook" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelCloseWorkbook_1" Workbook="[ityu]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ExcelApplicationScope.Body>
@@ -1583,6 +1553,153 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ExcelApplicationScope>
+              <Sequence sap:VirtualizedContainerService.HintSize="1731,773" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="FirstRowNum" />
+                  <Variable x:TypeArguments="ui:WorkbookApplication" Name="rty" />
+                  <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RandomFirstRow" />
+                  <Variable x:TypeArguments="x:String" Name="arr_test" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[SheetTrimmerFlag]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Workbook="[rty]" WorkbookPath="[ExcelPath]">
+                  <ui:ExcelApplicationScope.Body>
+                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExcelReadRow DisplayName="Read Row" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRow_4" PreserveFormat="True" Result="[RandomFirstRow]" SheetName="[ExcelSheetName]" StartingCell="A1" />
+                        <ui:ExcelCloseWorkbook DisplayName="Close Workbook" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelCloseWorkbook_2" Workbook="[rty]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ExcelApplicationScope.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ExcelApplicationScope>
+                <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[arr_test]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[string.Join(",", RandomFirstRow.ToArray() )]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[arr_test.ToString.Trim.ToLower.Contains(SOAUniqueStartHeader.ToLower.Trim)]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_37">
+                  <If.Then>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[SheetTrimmerFlag]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Then>
+                  <If.Else>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[SheetTrimmerFlag]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Else>
+                </If>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ExcelReadRow DisplayName="Read Row" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRow_3" Result="[FirstRowNum]" SheetName="[ExcelSheetName]" StartingCell="A1" />
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="569,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[RandomFirstRow]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="rat" />
+                            </ActivityAction.Argument>
+                            <If Condition="[rat.ToString.Trim.ToLower.Contains(SOAUniqueStartHeader.ToLower.Trim)]" sap:VirtualizedContainerService.HintSize="484,362" sap2010:WorkflowViewState.IdRef="If_36">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[SheetTrimmerFlag]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:Break sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Break_10" />
+                                </Sequence>
+                              </If.Then>
+                            </If>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+              </Sequence>
+              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1731,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[SheetTrimmerFlag]" />
               <If Condition="[ExcelSheetName.Trim.Equals(string.Empty)]" sap:VirtualizedContainerService.HintSize="1731,208" sap2010:WorkflowViewState.IdRef="If_32">
                 <If.Then>
                   <Throw Exception="[new BusinessRuleException(&quot;Extraction failed: no sheets contain unique identifier, filename: &quot;+ExcelPath)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
@@ -1590,75 +1707,29 @@
               </If>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Extraction workflow" sap:VirtualizedContainerService.HintSize="1731,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Extraction.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="strStartHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOAStartHeader" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strStartHeaderEnd">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOAStartHeaderEnd" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strFilePath">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelPath" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strEndHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOAEndHeader" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="ExtractedFolderPath">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractedFolderPath" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="AlphaKey">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AlphaKey" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strInvoiceHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOAInvoiceHeader" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strDateHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOADateHeader" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strTotalAmountHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOATotalAmount" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strAmountHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOAAmount" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strVatHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOAVatHeader" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strSupplierName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SupplierName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strSupplierAddress">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOA_Address" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strSheetName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExcelSheetName" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="strTemplatePath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strSOApath" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strMailDate">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="STRmailDate" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strDateFormat">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOADateFormatHeader" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="strAlphaFolder">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExtractedAlphaFolder" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="DateFormatSplitter">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DateFormatSplitter" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="VendorMailExtractedFolderPath">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="VendorMailExtractedFolderPath" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="strUniqueStartHeader">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOAUniqueStartHeader" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="FileCounter">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="counter" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Boolean" x:Key="SheetTrimmerFlag">
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SheetTrimmerFlag" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strStartHeader">[SOAStartHeader]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strStartHeaderEnd">[SOAStartHeaderEnd]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strFilePath">[ExcelPath]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strEndHeader">[SOAEndHeader]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="ExtractedFolderPath">[ExtractedFolderPath]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="AlphaKey">[AlphaKey]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strInvoiceHeader">[SOAInvoiceHeader]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strDateHeader">[SOADateHeader]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strTotalAmountHeader">[SOATotalAmount]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strAmountHeader">[SOAAmount]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strVatHeader">[SOAVatHeader]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strSupplierName">[SupplierName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strSupplierAddress">[SOA_Address]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strSheetName">[ExcelSheetName]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="strTemplatePath">[strSOApath]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strMailDate">[STRmailDate]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strDateFormat">[SOADateFormatHeader]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="strAlphaFolder">[strExtractedAlphaFolder]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="DateFormatSplitter">[DateFormatSplitter]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="VendorMailExtractedFolderPath">[VendorMailExtractedFolderPath]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="strUniqueStartHeader">[SOAUniqueStartHeader]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="FileCounter">[counter]</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="SheetTrimmerFlag">[SheetTrimmerFlag]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <If Condition="[counter=0]" sap:VirtualizedContainerService.HintSize="1731,458" sap2010:WorkflowViewState.IdRef="If_33">
@@ -1788,6 +1859,12 @@
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
     </Sequence>
   </Sequence>

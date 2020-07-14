@@ -6,7 +6,7 @@
   <this:SheetTrimmer.SheetName>
     <InArgument x:TypeArguments="x:String" />
   </this:SheetTrimmer.SheetName>
-  <sap:VirtualizedContainerService.HintSize>1514,2354</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,2314</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="19">
@@ -204,7 +204,7 @@
                                       </Assign>
                                     </If.Then>
                                     <If.Else>
-                                      <ui:ExcelWriteCell Cell="[T_ColumnIndex.ToString+&quot;&quot;+counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Trimmed Data" Text="[ExistingCellVal]" />
+                                      <ui:ExcelWriteCell Cell="[T_ColumnIndex.ToString+&quot;&quot;+counter.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Trimmed Data" Text="[&quot;'&quot;+ExistingCellVal]" />
                                     </If.Else>
                                   </If>
                                 </Sequence>
