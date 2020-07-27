@@ -1,0 +1,277 @@
+Sub Apply_Format()
+
+
+
+'''Autosize columns
+
+
+	ThisWorkbook.Worksheets("Recon_Report").Cells.EntireColumn.AutoFit
+
+
+
+'''formatting
+
+    Dim StartCell As Range
+    Set StartCell = Range("A1")
+    Dim myList As Range
+    Dim Lastrow As Long
+    Set myList = Range("A1:A" & Range("A" & Rows.Count).End(xlUp).Row)
+    Dim x As Range
+    '''myList.ClearFormats
+    For Each x In myList
+        '''myList.ClearFormats
+        
+	If x.Value = "Supplier_Name" Then
+        l = x.Row
+        x.Font.bold = True
+       Set Border_range = Range("A" & l & ":B" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+	
+	
+	If x.Value = "Payment raised for" Then
+        l = x.Row
+        x.Font.bold = True
+       Set Border_range = Range("A" & l & ":B" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+
+	If x.Value = "Period" Then
+        l = x.Row
+        x.Font.bold = True
+       Set Border_range = Range("A" & l & ":B" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+	
+	If x.Value = "As per Supplier Books" Then
+       l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+	Range("A" & l & ":D" & l).Interior.ColorIndex = 40
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+
+	If x.Value = "SOA/Supplier Statement (A)" Then
+       l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Less: Invoices NOT received (B)" Then
+       l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+                
+        If x.Value = "less:- Invoices posted in next  month  (BA)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Less: Invoices Paid (C)" Then
+       l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Less: Invoices not due for payment (D)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Less: Invoice amt difference (E)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+                If x.Value = "Total (F)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "As per our Books" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+	Range("A" & l & ":D" & l).Interior.ColorIndex = 43
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Balance As per our books (G)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Less: Invoices not in SOA (H)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Less: Invoice  amt difference (J)" Then
+       l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+                If x.Value = "Less: Invoices not due for payment (K)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+        If x.Value = "Invoices due for Payment (L)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+        
+                If x.Value = "Total Variance  (M)" Then
+        l = x.Row
+        Range("A" & l & ":D" & l).Font.bold = True
+       Set Border_range = Range("A" & l & ":D" & l)
+        With Border_range.Borders
+           .LineStyle = xlContinuous
+           .Weight = xlThin
+           .ColorIndex = 0
+           .TintAndShade = 0
+        End With
+        End If
+      
+        
+    Next
+    
+''' Adding Overall Border
+
+    Lastrow = Range("A" & Rows.Count).End(xlUp).Row
+    
+      Range("A4:D" & Lastrow).Select
+       
+        With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    Range("A1").Select
+End Sub

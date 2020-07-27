@@ -17,7 +17,7 @@ For Each wsh In target.Sheets
         For Each cell In ActiveSheet.UsedRange
             replaceStringChar = Replace(cell, Chr(160), "")
             replaceStringSpace = Trim(replaceStringChar)
-            cell = 'replaceStringSpace
+            cell = replaceStringSpace
        Next cell
     End With
 Next wsh

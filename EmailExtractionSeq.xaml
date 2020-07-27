@@ -48,7 +48,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1883,3509</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2428,10880</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EmailExtractionSeq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -108,7 +108,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="1893,3444" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="2438,10735" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SOAInvoiceHeader" />
       <Variable x:TypeArguments="x:String" Name="SOADateHeader" />
@@ -137,13 +137,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="1851,781" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    <Sequence DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="2396,8075" sap2010:WorkflowViewState.IdRef="Sequence_26">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strMailFrom" />
         <Variable x:TypeArguments="x:String" Name="strMailSubject" />
         <Variable x:TypeArguments="x:String" Name="strMailBody" />
         <Variable x:TypeArguments="x:String" Name="strDomainName" />
         <Variable x:TypeArguments="x:Boolean" Name="BoolVendorFound" />
+        <Variable x:TypeArguments="x:String" Name="TodaysPath" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -151,8 +152,16 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="338,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
-      <ui:MultipleAssign DisplayName="mail_Multiple Assign" sap:VirtualizedContainerService.HintSize="338,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+      <ui:KillProcess ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="2354,22" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
+      <Assign sap:VirtualizedContainerService.HintSize="2354,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[TodaysPath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[now.Year.ToString+"\"+now.ToString("MMM")+"\"+now.Day.ToString+"\"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:MultipleAssign DisplayName="mail_Multiple Assign" sap:VirtualizedContainerService.HintSize="2354,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
@@ -214,11 +223,11 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Extracted Domain: &quot;+strDomainName.ToString]" />
-      <Sequence DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="338,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2354,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Extracted Domain: &quot;+strDomainName.ToString]" />
+      <Sequence DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="2354,4265" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -586,7 +595,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
                         <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="380,143" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_37">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1046,10 +1055,10 @@
           </If.Then>
         </If>
       </Sequence>
-      <Sequence DisplayName="VendorFolderCreation" sap:VirtualizedContainerService.HintSize="338,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <Sequence DisplayName="VendorFolderCreation" sap:VirtualizedContainerService.HintSize="2354,3061" sap2010:WorkflowViewState.IdRef="Sequence_25">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -1061,7 +1070,7 @@
                   <OutArgument x:TypeArguments="x:String">[VendorFolderPath]</OutArgument>
                 </ui:AssignOperation.To>
                 <ui:AssignOperation.Value>
-                  <InArgument x:TypeArguments="x:String">[InputFolderPath+AlphaKey.ToString.ToUpper+"\"]</InArgument>
+                  <InArgument x:TypeArguments="x:String">[InputFolderPath+AlphaKey.ToString.ToUpper+"\"+TodaysPath+"\"]</InArgument>
                 </ui:AssignOperation.Value>
               </ui:AssignOperation>
               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_48">
@@ -1115,13 +1124,13 @@
             </scg:List>
           </ui:MultipleAssign.AssignOperations>
         </ui:MultipleAssign>
-        <If Condition="[not Directory.Exists(VendorFolderPath)]" DisplayName="If createVendorFolder" sap:VirtualizedContainerService.HintSize="2312,228" sap2010:WorkflowViewState.IdRef="If_19">
+        <If Condition="[not Directory.Exists(VendorFolderPath)]" DisplayName="If createVendorFolder" sap:VirtualizedContainerService.HintSize="2312,227" sap2010:WorkflowViewState.IdRef="If_19">
           <If.Then>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[VendorFolderPath]" />
+            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[VendorFolderPath]" />
           </If.Then>
         </If>
         <ui:SaveMail DisplayName="Save Mail Message" FilePath="[VendorEmailPath]" sap:VirtualizedContainerService.HintSize="2312,87" sap2010:WorkflowViewState.IdRef="SaveMail_4" MailMessage="[Mail]" />
-        <If Condition="[not Directory.Exists(VendorOtherFolderPath)]" DisplayName="If OthersFolder: SAVE ATTACHMENT" sap:VirtualizedContainerService.HintSize="2312,2269" sap2010:WorkflowViewState.IdRef="If_27">
+        <If Condition="[not Directory.Exists(VendorOtherFolderPath)]" DisplayName="If OthersFolder: SAVE ATTACHMENT" sap:VirtualizedContainerService.HintSize="2312,2251" sap2010:WorkflowViewState.IdRef="If_27">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1129,21 +1138,21 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence DisplayName="saveattachment" sap:VirtualizedContainerService.HintSize="2167,2121" sap2010:WorkflowViewState.IdRef="Sequence_24">
+            <Sequence DisplayName="saveattachment" sap:VirtualizedContainerService.HintSize="2167,2103" sap2010:WorkflowViewState.IdRef="Sequence_24">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="2125,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_7" Path="[VendorOtherFolderPath]" />
+              <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="2125,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_7" Path="[VendorOtherFolderPath]" />
               <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="[VendorOtherFolderPath]" sap:VirtualizedContainerService.HintSize="2125,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_2" Message="[Mail]" />
-              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="2125,1532" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Directory.GetFiles(VendorOtherFolderPath)]">
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="2125,1517" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Directory.GetFiles(VendorOtherFolderPath)]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:String" Name="file" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2089,1397" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2089,1383" sap2010:WorkflowViewState.IdRef="Sequence_23">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="FileName" />
                         <Variable x:TypeArguments="x:String" Name="extension" />
@@ -1184,7 +1193,7 @@
                           </scg:List>
                         </ui:MultipleAssign.AssignOperations>
                       </ui:MultipleAssign>
-                      <If Condition="[ExcelExtension_list.Contains(extension)]" DisplayName="If ExcelFileCheck" sap:VirtualizedContainerService.HintSize="2047,1105" sap2010:WorkflowViewState.IdRef="If_25">
+                      <If Condition="[ExcelExtension_list.Contains(extension)]" DisplayName="If ExcelFileCheck" sap:VirtualizedContainerService.HintSize="2047,1091" sap2010:WorkflowViewState.IdRef="If_25">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1192,7 +1201,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Excel" sap:VirtualizedContainerService.HintSize="526,747" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                          <Sequence DisplayName="Excel" sap:VirtualizedContainerService.HintSize="526,738" sap2010:WorkflowViewState.IdRef="Sequence_20">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:String[]" Name="arrExcelExtension" />
                               <Variable x:TypeArguments="x:String" Name="orgFilePaath" />
@@ -1202,21 +1211,21 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[not Directory.Exists(VendorExcelFolderPath)]" DisplayName="If FolderCreation" sap:VirtualizedContainerService.HintSize="484,230" sap2010:WorkflowViewState.IdRef="If_20">
+                            <If Condition="[not Directory.Exists(VendorExcelFolderPath)]" DisplayName="If FolderCreation" sap:VirtualizedContainerService.HintSize="484,227" sap2010:WorkflowViewState.IdRef="If_20">
                               <If.Then>
-                                <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_8" Path="[VendorExcelFolderPath]" />
+                                <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_8" Path="[VendorExcelFolderPath]" />
                               </If.Then>
                             </If>
-                            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[VendorExcelFolderPath+FileName]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="[file.ToString]" />
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[VendorExcelFolderPath+FileName]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="True" Path="[file.ToString]" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
                               <ui:CommentOut.Body>
-                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,160" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,158" sap2010:WorkflowViewState.IdRef="Sequence_40">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Sequence DisplayName="xlsm c" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                  <Sequence DisplayName="xlsm c" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="moie:_Application" Name="variable1" />
                                       <Variable x:TypeArguments="moie:_Workbook" Name="variable2" />
@@ -1303,43 +1312,43 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:CommentOut>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,93" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[FileName+&quot;Is a Excel file : File moved to Excel Folder&quot;]" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[FileName+&quot;Is a Excel file : File moved to Excel Folder&quot;]" />
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <If Condition="[PDfExtension_list.Contains(extension)]" DisplayName="If PDFFileCheck" sap:VirtualizedContainerService.HintSize="1476,955" sap2010:WorkflowViewState.IdRef="If_24">
+                          <If Condition="[PDfExtension_list.Contains(extension)]" DisplayName="If PDFFileCheck" sap:VirtualizedContainerService.HintSize="1476,943" sap2010:WorkflowViewState.IdRef="If_24">
                             <If.Then>
-                              <Sequence DisplayName="PDF" sap:VirtualizedContainerService.HintSize="526,655" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <Sequence DisplayName="PDF" sap:VirtualizedContainerService.HintSize="526,647" sap2010:WorkflowViewState.IdRef="Sequence_21">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <If Condition="[not Directory.Exists(VendorPDFFolderPath)]" DisplayName="If FolderCreation" sap:VirtualizedContainerService.HintSize="484,230" sap2010:WorkflowViewState.IdRef="If_21">
+                                <If Condition="[not Directory.Exists(VendorPDFFolderPath)]" DisplayName="If FolderCreation" sap:VirtualizedContainerService.HintSize="484,227" sap2010:WorkflowViewState.IdRef="If_21">
                                   <If.Then>
-                                    <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_9" Path="[VendorPDFFolderPath]" />
+                                    <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_9" Path="[VendorPDFFolderPath]" />
                                   </If.Then>
                                 </If>
-                                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[VendorPDFFolderPath+FileName]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="MoveFile_5" Overwrite="True" Path="[file.ToString]" />
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,93" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[FileName+&quot;Is a PDF file : File moved to PDF Folder&quot;]" />
+                                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[VendorPDFFolderPath+FileName]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="MoveFile_5" Overwrite="True" Path="[file.ToString]" />
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[FileName+&quot;Is a PDF file : File moved to PDF Folder&quot;]" />
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <If Condition="[ImageExtension_list.Contains(extension)]" sap:VirtualizedContainerService.HintSize="905,805" sap2010:WorkflowViewState.IdRef="If_23">
+                              <If Condition="[ImageExtension_list.Contains(extension)]" sap:VirtualizedContainerService.HintSize="905,795" sap2010:WorkflowViewState.IdRef="If_23">
                                 <If.Then>
-                                  <Sequence DisplayName="Image" sap:VirtualizedContainerService.HintSize="526,655" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                  <Sequence DisplayName="Image" sap:VirtualizedContainerService.HintSize="526,647" sap2010:WorkflowViewState.IdRef="Sequence_22">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[not Directory.Exists(VendorImageFolderPath)]" DisplayName="If FolderCreation" sap:VirtualizedContainerService.HintSize="484,230" sap2010:WorkflowViewState.IdRef="If_22">
+                                    <If Condition="[not Directory.Exists(VendorImageFolderPath)]" DisplayName="If FolderCreation" sap:VirtualizedContainerService.HintSize="484,227" sap2010:WorkflowViewState.IdRef="If_22">
                                       <If.Then>
-                                        <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_10" Path="[VendorImageFolderPath]" />
+                                        <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_10" Path="[VendorImageFolderPath]" />
                                       </If.Then>
                                     </If>
-                                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[VendorImageFolderPath+FileName]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,160" sap2010:WorkflowViewState.IdRef="MoveFile_6" Overwrite="True" Path="[file.ToString]" />
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,93" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[FileName+&quot;Is a Image file : File moved to Image Folder&quot;]" />
+                                    <ui:MoveFile ContinueOnError="{x:Null}" Destination="[VendorImageFolderPath+FileName]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="MoveFile_6" Overwrite="True" Path="[file.ToString]" />
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[FileName+&quot;Is a Image file : File moved to Image Folder&quot;]" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
@@ -1360,7 +1369,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <If Condition="[Directory.GetFiles(VendorOtherFolderPath).Length=0]" DisplayName="If to delete others folder" sap:VirtualizedContainerService.HintSize="2125,210" sap2010:WorkflowViewState.IdRef="If_26">
+              <If Condition="[Directory.GetFiles(VendorOtherFolderPath).Length=0]" DisplayName="If to delete others folder" sap:VirtualizedContainerService.HintSize="2125,208" sap2010:WorkflowViewState.IdRef="If_26">
                 <If.Then>
                   <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_2" Path="[VendorOtherFolderPath]" />
                 </If.Then>
@@ -1370,7 +1379,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="1851,2531" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="2396,2528" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counter" />
         <Variable x:TypeArguments="x:Boolean" Name="SheetTrimmerFlag" />
@@ -1380,7 +1389,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="1809,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign sap:VirtualizedContainerService.HintSize="833,60" sap2010:WorkflowViewState.IdRef="Assign_10">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
         </Assign.To>
@@ -1388,13 +1397,13 @@
           <InArgument x:TypeArguments="x:Int32">0</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1809,2339" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="833,2336" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="ExcelPath" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="1773,2205" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="797,2202" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="ExcelSheetName" />
                 <Variable x:TypeArguments="x:String" Name="strSOApath" />
@@ -1405,7 +1414,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1731,413" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" Workbook="[ityu]" WorkbookPath="[ExcelPath]">
+              <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="755,413" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" Workbook="[ityu]" WorkbookPath="[ExcelPath]">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
@@ -1553,9 +1562,9 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ExcelApplicationScope>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1731,51" sap2010:WorkflowViewState.IdRef="CommentOut_10">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,51" sap2010:WorkflowViewState.IdRef="CommentOut_10">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,257" sap2010:WorkflowViewState.IdRef="Sequence_54">
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="653,257" sap2010:WorkflowViewState.IdRef="Sequence_54">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1717,12 +1726,12 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <If Condition="[ExcelSheetName.Trim.Equals(string.Empty)]" sap:VirtualizedContainerService.HintSize="1731,208" sap2010:WorkflowViewState.IdRef="If_32">
+              <If Condition="[ExcelSheetName.Trim.Equals(string.Empty)]" sap:VirtualizedContainerService.HintSize="755,208" sap2010:WorkflowViewState.IdRef="If_32">
                 <If.Then>
                   <Throw Exception="[new BusinessRuleException(&quot;Extraction failed: no sheets contain unique identifier, filename: &quot;+ExcelPath)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
                 </If.Then>
               </If>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Extraction workflow" sap:VirtualizedContainerService.HintSize="1731,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Extraction.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Extraction workflow" sap:VirtualizedContainerService.HintSize="755,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Extraction.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="strStartHeader">[SOAStartHeader]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="strStartHeaderEnd">[SOAStartHeaderEnd]</InArgument>
@@ -1749,7 +1758,7 @@
                   <InArgument x:TypeArguments="x:Boolean" x:Key="SheetTrimmerFlag">[SheetTrimmerFlag]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <If Condition="[counter=0]" sap:VirtualizedContainerService.HintSize="1731,458" sap2010:WorkflowViewState.IdRef="If_33">
+              <If Condition="[counter=0]" sap:VirtualizedContainerService.HintSize="755,458" sap2010:WorkflowViewState.IdRef="If_33">
                 <If.Then>
                   <Sequence sap:VirtualizedContainerService.HintSize="376,310" sap2010:WorkflowViewState.IdRef="Sequence_44">
                     <sap:WorkflowViewStateService.ViewState>
@@ -1783,24 +1792,48 @@
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Transaction history download not required&quot;]" />
                 </If.Else>
               </If>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1731,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Recon start&quot;]" />
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Recon_Updated workflow" sap:VirtualizedContainerService.HintSize="1731,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Recon_Updated.xaml">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Recon start&quot;]" />
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Recon_Updated workflow" sap:VirtualizedContainerService.HintSize="755,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Recon_Updated.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="Recon_template">[ReconTemplatePath]</InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="z">[SOAintCreditPeriod]</InArgument>
-                  <InArgument x:TypeArguments="s:DateTime" x:Key="maildate">[MailDate]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_excel">[VendorMailExtractedFolderPath+"Transaction_history.xlsx"]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_folder_Path">[TransactionHistoryFolderPath]</InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="mailDate_limit">[intMonthDivision]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Sheet_transaction_history">[GlobalBakeHistorySheetName]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Vendor_SOA_excel">[strSOApath]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="PaymentRaisedfor">[strCompanyList]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Supplier_Name">[ExtractedCompanyName]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Recon_Output_FolderPath">[VendorMailExtractedFolderPath]</InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="FileCount">[counter]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Recon_template">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReconTemplatePath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="z">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="SOAintCreditPeriod" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="maildate">
+                    <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="MailDate" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_excel">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="VendorMailExtractedFolderPath+&quot;Transaction_history.xlsx&quot;" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_folder_Path">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionHistoryFolderPath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="mailDate_limit">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intMonthDivision" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Sheet_transaction_history">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GlobalBakeHistorySheetName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Vendor_SOA_excel">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSOApath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="PaymentRaisedfor">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCompanyList" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Supplier_Name">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractedCompanyName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Recon_Output_FolderPath">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="VendorMailExtractedFolderPath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="VBA_formattingcode_location">
+                    <Literal x:TypeArguments="x:String">C:\Users\rpa\Documents\UiPath\REFramework_Mails\ReconFormatting_VBA Code.txt</Literal>
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1731,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_45">
                     <sap:WorkflowViewStateService.ViewState>
@@ -1841,9 +1874,9 @@
                   <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,93" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Recon Completed&quot;]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Recon Completed&quot;]" />
               <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,181" sap2010:WorkflowViewState.IdRef="Sequence_35">
                     <sap:WorkflowViewStateService.ViewState>
