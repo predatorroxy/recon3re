@@ -616,9 +616,9 @@
     </State>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
-    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read Config, Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="981,3538" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read Config, Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="254,92" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="935,3120" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="935,3724" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -626,7 +626,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Init State" sap:VirtualizedContainerService.HintSize="897,2893" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Init State" sap:VirtualizedContainerService.HintSize="897,3497" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1288,11 +1288,10 @@
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
               </Sequence>
-              <Sequence DisplayName="Logs generation" sap:VirtualizedContainerService.HintSize="855,1289" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence DisplayName="Logs generation" sap:VirtualizedContainerService.HintSize="855,1893" sap2010:WorkflowViewState.IdRef="Sequence_32">
                 <Sequence.Variables>
-                  <Variable x:TypeArguments="x:String" Name="BotProcessLogsPath" />
-                  <Variable x:TypeArguments="x:String" Name="SupplierProcessLogsPath" />
                   <Variable x:TypeArguments="ui:WorkbookApplication" Name="wb" />
+                  <Variable x:TypeArguments="x:Boolean" Name="pe" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1300,7 +1299,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:BuildDataTable DataTable="[DT_BotProcessLogs]" DisplayName="Build Data Table BotProcessLog" sap:VirtualizedContainerService.HintSize="813,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Start_Time&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;End_Time&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Exception_Description&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Company_Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Alpha_Key&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Supplier_Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Period&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Total_Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
-                <ui:BuildDataTable DataTable="[DT_SupplierProcessLogs]" DisplayName="Build Data Table Supplier Process Logs" sap:VirtualizedContainerService.HintSize="813,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SupplierName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;AlphaKey&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CompanyName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Processed_Month&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Processed_Year&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Exception_Description&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FutureDate_SOA&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;File_Path&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                <ui:BuildDataTable DataTable="[DT_SupplierProcessLogs]" DisplayName="Build Data Table Supplier Process Logs" sap:VirtualizedContainerService.HintSize="813,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TimeStamp&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SupplierName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;AlphaKey&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CompanyName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Processed_Month&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Processed_Year&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Exception_Description&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FutureDate_SOA&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;File_Path&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
                 <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="813,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
@@ -1323,10 +1322,10 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <If sap2010:Annotation.AnnotationText="File creation for bot process logs" Condition="[not Directory.Exists(BotProcessLogsPath)]" sap:VirtualizedContainerService.HintSize="813,93" sap2010:WorkflowViewState.IdRef="If_13">
+                <If sap2010:Annotation.AnnotationText="File creation for bot process logs" Condition="[not file.Exists(BotProcessLogsPath)]" sap:VirtualizedContainerService.HintSize="813,697" sap2010:WorkflowViewState.IdRef="If_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
@@ -1362,7 +1361,7 @@
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot;Log already present: Bot Process log&quot;]" />
                   </If.Else>
                 </If>
-                <If sap2010:Annotation.AnnotationText="File creation for process logs" Condition="[not Directory.Exists(SupplierProcessLogsPath)]" sap:VirtualizedContainerService.HintSize="813,697" sap2010:WorkflowViewState.IdRef="If_14">
+                <If sap2010:Annotation.AnnotationText="File creation for process logs" Condition="[not file.Exists(SupplierProcessLogsPath)]" sap:VirtualizedContainerService.HintSize="813,697" sap2010:WorkflowViewState.IdRef="If_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1371,7 +1370,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,518" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Visible="False" Workbook="[wb]" WorkbookPath="[ProcessedLogsFolderPath]">
+                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,518" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Visible="False" Workbook="[wb]" WorkbookPath="[SupplierProcessLogsPath]">
                       <ui:ExcelApplicationScope.Body>
                         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                           <ActivityAction.Argument>
@@ -1419,7 +1418,7 @@
                 </ui:ReadRange>
                 <ui:RemoveDuplicateRows DataTable="[DT_SupplierMappingTemplate]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[DT_SupplierMappingTemplate]" />
               </Sequence>
-              <TryCatch sap2010:Annotation.AnnotationText="To check for mail message extraction&#xD;&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="855,108" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+              <TryCatch sap2010:Annotation.AnnotationText="To check for mail message extraction&#xA;" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="855,108" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1526,7 +1525,7 @@
             <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemError is Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
           </Transition.Condition>
         </Transition>
-        <Transition DisplayName="System Error" sap:VirtualizedContainerService.HintSize="450,796" sap2010:WorkflowViewState.IdRef="Transition_3">
+        <Transition DisplayName="System Error" sap:VirtualizedContainerService.HintSize="479,1086" sap2010:WorkflowViewState.IdRef="Transition_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:PointCollection x:Key="ConnectorLocation">401.5,100.5 401.5,130.5 137.8,130.5 137.8,188.5</av:PointCollection>
@@ -1539,7 +1538,16 @@
             <x:Reference>__ReferenceID2</x:Reference>
           </Transition.To>
           <Transition.Action>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Fatal" Message="[&quot;System error at initialization: &quot; + SystemError.Message + &quot; at Source: &quot; + SystemError.Source]" />
+            <Sequence sap:VirtualizedContainerService.HintSize="376,400" sap2010:WorkflowViewState.IdRef="Sequence_37">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Fatal" Message="[&quot;System error at initialization: &quot; + SystemError.Message + &quot; at Source: &quot; + SystemError.Source]" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{now.ToString,now.ToString,&quot;Sytem Exception&quot;,SystemError.Message,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;}]" DataTable="[DT_BotProcessLogs]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+              <ui:AppendRange DataTable="[DT_BotProcessLogs]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="ReconLogs" WorkbookPath="[BotProcessLogsPath]" />
+            </Sequence>
           </Transition.Action>
           <Transition.Condition>[SystemError isNot Nothing]</Transition.Condition>
         </Transition>
@@ -1604,6 +1612,8 @@
       <Variable x:TypeArguments="x:String" Name="strTableUniqueStartHeader" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_BotProcessLogs" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_SupplierProcessLogs" />
+      <Variable x:TypeArguments="x:String" Name="BotProcessLogsPath" />
+      <Variable x:TypeArguments="x:String" Name="SupplierProcessLogsPath" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
