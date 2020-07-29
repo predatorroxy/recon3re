@@ -19,7 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234,1964</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,2214</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CompanyListDetermination_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -78,7 +78,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CompanyListDetermination" sap:VirtualizedContainerService.HintSize="833,1899" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CompanyListDetermination" sap:VirtualizedContainerService.HintSize="833,2109" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_table" />
       <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -133,7 +133,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:FilterDataTable DataTable="[DT_mappingTemp]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="791,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_table]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="To build the company list" DataTable="[DT_mappingTemp]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="791,90" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_table]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -151,6 +151,11 @@
           <x:Null />
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
     <ui:ForEachRow CurrentIndex="[i]" DataTable="[DT_table]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="791,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
@@ -299,33 +304,37 @@
         </ui:InterruptibleDoWhile>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke NavigationBetweenCompany workflow" sap:VirtualizedContainerService.HintSize="791,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="NavigationBetweenCompany.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="IntDuration">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCalenderDuration" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:String[]" x:Key="Arr_CompanyList">
-          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ArrayCompany" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="StrVendorAlphaKey">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AlphaKey" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="Int_Loc_SelectCompany">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCompanySwitchLoc" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractionFolderPath" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="intLocVendorAll">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intVendorAllLoc" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="TransactionHistoryFolderPath">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="TransactionHistoryFolderPath" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="ExtractedCompanyName">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedCompanyName" />
-        </OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="791,266" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke NavigationBetweenCompany workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="NavigationBetweenCompany.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:Int32" x:Key="IntDuration">[intCalenderDuration]</InArgument>
+            <InArgument x:TypeArguments="s:String[]" x:Key="Arr_CompanyList">[ArrayCompany]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="StrVendorAlphaKey">[AlphaKey]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="Int_Loc_SelectCompany">[intCompanySwitchLoc]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="FolderPath">[ExtractionFolderPath]</InArgument>
+            <InArgument x:TypeArguments="x:Int32" x:Key="intLocVendorAll">[intVendorAllLoc]</InArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="TransactionHistoryFolderPath">[TransactionHistoryFolderPath]</OutArgument>
+            <OutArgument x:TypeArguments="x:String" x:Key="ExtractedCompanyName">[ExtractedCompanyName]</OutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,104" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>

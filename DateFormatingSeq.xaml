@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1476,3410</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1476,3350</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DateFormatingSeq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -63,7 +63,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DateFormatingSeq" sap:VirtualizedContainerService.HintSize="1486,3145" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DateFormatingSeq" sap:VirtualizedContainerService.HintSize="1486,3245" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:Char[]" Name="Arraysplit" />
       <Variable x:TypeArguments="x:String" Name="splitter" />
@@ -191,7 +191,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
     </Sequence>
-    <Sequence DisplayName="formatSplitter" sap:VirtualizedContainerService.HintSize="1444,922" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence DisplayName="formatSplitter" sap:VirtualizedContainerService.HintSize="1444,1022" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="frmtSplitter" />
       </Sequence.Variables>
@@ -294,9 +294,15 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <If Condition="[splitter.trim.Equals(&quot;/&quot;) and not frmtSplitter.Equals(&quot;/&quot;)]" sap:VirtualizedContainerService.HintSize="484,400" sap2010:WorkflowViewState.IdRef="If_13">
+      <If Condition="[splitter.trim.Equals(&quot;/&quot;) and not frmtSplitter.Equals(&quot;/&quot;)]" sap:VirtualizedContainerService.HintSize="484,500" sap2010:WorkflowViewState.IdRef="If_13">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -308,6 +314,14 @@
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">/</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[format_in]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[format_in.Replace(frmtSplitter,"/")]</InArgument>
               </Assign.Value>
             </Assign>
             <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">

@@ -19,7 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234,898</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,938</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Download_Submitted_Invoice_Detail_In_GBS__ERP__1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -49,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -112,20 +112,20 @@
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2165,14027" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="2165,9999" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <TryCatch.Try>
-          <Sequence sap:VirtualizedContainerService.HintSize="2127,13800" sap2010:WorkflowViewState.IdRef="Sequence_122">
+          <Sequence sap:VirtualizedContainerService.HintSize="2127,9772" sap2010:WorkflowViewState.IdRef="Sequence_122">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap:VirtualizedContainerService.HintSize="2085,13708" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <Sequence sap:VirtualizedContainerService.HintSize="2085,9680" sap2010:WorkflowViewState.IdRef="Sequence_40">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="loopCount" />
               </Sequence.Variables>
@@ -164,13 +164,13 @@
               <ui:RetryScope DisplayName="Retry Scope_Check_Whether_Home_Page" sap:VirtualizedContainerService.HintSize="2043,1029" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
-                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="873,764" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="739,764" sap2010:WorkflowViewState.IdRef="Sequence_42">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="831,68" sap2010:WorkflowViewState.IdRef="Activate_1">
+                      <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="697,68" sap2010:WorkflowViewState.IdRef="Activate_1">
                         <ui:Activate.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ca71de5a-125e-421d-b232-a86d7f088d3a" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*Menu*' /&gt;">
                             <ui:Target.TimeoutMS>
@@ -182,19 +182,19 @@
                           </ui:Target>
                         </ui:Activate.Target>
                       </ui:Activate>
-                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe [1]'" sap:VirtualizedContainerService.HintSize="831,564" sap2010:WorkflowViewState.IdRef="WindowScope_10" InformativeScreenshot="ce91b8233272394dfbd495373ce776b2" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*Menu*' /&gt;">
+                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe [1]'" sap:VirtualizedContainerService.HintSize="697,564" sap2010:WorkflowViewState.IdRef="WindowScope_10" InformativeScreenshot="ce91b8233272394dfbd495373ce776b2" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*Menu*' /&gt;">
                         <ui:WindowScope.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,418" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="663,418" sap2010:WorkflowViewState.IdRef="Sequence_85">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[B_GBS_Demo_Pg]" DisplayName="If_Check_Whether_Home_Page" sap:VirtualizedContainerService.HintSize="755,326" sap2010:WorkflowViewState.IdRef="If_17">
+                              <If Condition="[B_GBS_Demo_Pg]" DisplayName="If_Check_Whether_Home_Page" sap:VirtualizedContainerService.HintSize="621,326" sap2010:WorkflowViewState.IdRef="If_17">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -216,7 +216,7 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Error" Message="[&quot;Failed  To Click On Vendors&quot;]" />
+                                  <Throw Exception="[new SystemException(&quot;SE01: Failed to click on vendor in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                                 </If.Else>
                               </If>
                             </Sequence>
@@ -274,10 +274,10 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:UiElementExists>
-              <ui:RetryScope DisplayName="Retry Scope_File_Access Window" sap:VirtualizedContainerService.HintSize="2043,2950" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3">
+              <ui:RetryScope DisplayName="Retry Scope_File_Access Window" sap:VirtualizedContainerService.HintSize="2043,51" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
-                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1280,2685" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="1065,1042" sap2010:WorkflowViewState.IdRef="Sequence_44">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="counter" />
                       </Sequence.Variables>
@@ -286,7 +286,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="1238,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign sap:VirtualizedContainerService.HintSize="1023,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
                         </Assign.To>
@@ -294,13 +294,13 @@
                           <InArgument x:TypeArguments="x:Int32">1</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe [1]'" sap:VirtualizedContainerService.HintSize="1238,2493" sap2010:WorkflowViewState.IdRef="WindowScope_11" InformativeScreenshot="9102df45b4289e32ceb895a6ac6f9b25" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*Menu*- [Vendor*' /&gt;&lt;wnd cls='Jade:form' title='Vendor : File Access*' /&gt;">
+                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe [1]'" sap:VirtualizedContainerService.HintSize="1023,850" sap2010:WorkflowViewState.IdRef="WindowScope_11" InformativeScreenshot="9102df45b4289e32ceb895a6ac6f9b25" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*Menu*- [Vendor*' /&gt;&lt;wnd cls='Jade:form' title='Vendor : File Access*' /&gt;">
                         <ui:WindowScope.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1204,2347" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="989,704" sap2010:WorkflowViewState.IdRef="Sequence_86">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Boolean" Name="boolKeyFlag" />
                               </Sequence.Variables>
@@ -309,7 +309,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[B_File_Access]" DisplayName="If_Check_File_Access Window" sap:VirtualizedContainerService.HintSize="1162,2255" sap2010:WorkflowViewState.IdRef="If_18">
+                              <If Condition="[B_File_Access]" DisplayName="If_Check_File_Access Window" sap:VirtualizedContainerService.HintSize="947,612" sap2010:WorkflowViewState.IdRef="If_18">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -317,23 +317,24 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="741,2108" sap2010:WorkflowViewState.IdRef="Sequence_126">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="526,465" sap2010:WorkflowViewState.IdRef="Sequence_126">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="699,1870" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+                                    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,227" sap2010:WorkflowViewState.IdRef="DoWhile_1">
                                       <DoWhile.Condition>
                                         <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolkeyflag=False" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
                                       </DoWhile.Condition>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="653,1709" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                      <Sequence DisplayName="AlphaKey entry" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_125">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="enteredAlphakey" />
                                         </Sequence.Variables>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="611,91" sap2010:WorkflowViewState.IdRef="LogMessage_49" Level="Info" Message="[Demo_AlphaKey]" />
@@ -450,12 +451,12 @@
                                         </If>
                                         <If Condition="[counter&gt;2]" sap:VirtualizedContainerService.HintSize="611,207" sap2010:WorkflowViewState.IdRef="If_43">
                                           <If.Then>
-                                            <Throw Exception="[new BusinessRuleException(&quot;AlphaKeyEnter error&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                            <Throw Exception="[new BusinessRuleException(&quot;BE:10: AlphaKeyEntery error: cannot enter the alpha key correctly.Verify AlphaKey&quot;+Demo_AlphaKey)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                                           </If.Then>
                                         </If>
                                       </Sequence>
                                     </DoWhile>
-                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Click 'Jade:CheckBox'" sap:VirtualizedContainerService.HintSize="699,106" sap2010:WorkflowViewState.IdRef="Click_100" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Click 'Jade:CheckBox'" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_100" KeyModifiers="None" MouseButton="BTN_LEFT">
                                       <ui:Click.CursorPosition>
                                         <ui:CursorPosition Position="Center">
                                           <ui:CursorPosition.OffsetX>
@@ -480,13 +481,14 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_57">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Error" Message="[&quot;Failed To Write Alpha Key&quot;]" />
+                                    <Throw Exception="[new SystemException(&quot;SE02: Failed to open alpha key entry window in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
                                   </Sequence>
                                 </If.Else>
                               </If>
@@ -527,7 +529,7 @@
                 </ui:RetryScope.Condition>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -635,13 +637,14 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_60">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Error" Message="[&quot;Failed TO Click On Details&quot;]" />
+                                    <Throw Exception="[New SystemException(&quot;SE03: Failed to click on details in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
                                   </Sequence>
                                 </If.Else>
                               </If>
@@ -700,7 +703,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:UiElementExists>
-              <ui:RetryScope DisplayName="Retry Scope_Transaction_History" sap:VirtualizedContainerService.HintSize="2043,1482" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="3">
+              <ui:RetryScope DisplayName="Retry Scope_Transaction_History" sap:VirtualizedContainerService.HintSize="2043,51" sap2010:WorkflowViewState.IdRef="RetryScope_6" NumberOfRetries="3">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
                     <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="957,1217" sap2010:WorkflowViewState.IdRef="Sequence_49">
@@ -770,13 +773,14 @@
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_62">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Error" Message="[&quot;Failed To Click on Search &amp; Trans History&quot;]" />
+                                      <Throw Exception="[New SystemException(&quot;SE04: Failed to click on Search and transaction history in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
                                     </Sequence>
                                   </If.Else>
                                 </If>
@@ -840,7 +844,7 @@
                 </ui:RetryScope.Condition>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -975,13 +979,14 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_72">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Error" Message="[&quot;Failed To Click On Check Box&quot;]" />
+                                    <Throw Exception="[New SystemException(&quot;SE06: Failed to click on Export check box in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
                                   </Sequence>
                                 </If.Else>
                               </If>
@@ -1040,28 +1045,28 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:UiElementExists>
-              <ui:RetryScope DisplayName="Retry Scope_Export" sap:VirtualizedContainerService.HintSize="2043,925" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="3">
+              <ui:RetryScope DisplayName="Retry Scope_Export" sap:VirtualizedContainerService.HintSize="2043,987" sap2010:WorkflowViewState.IdRef="RetryScope_8" NumberOfRetries="3">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
-                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="873,660" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="873,722" sap2010:WorkflowViewState.IdRef="Sequence_52">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe [1]'" sap:VirtualizedContainerService.HintSize="831,568" sap2010:WorkflowViewState.IdRef="WindowScope_16" InformativeScreenshot="8866c14d9e88fdd63eb7b3e9d6b5b39e" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*Menu*- [Export]' /&gt;&lt;wnd cls='Jade:form' title='Export' /&gt;">
+                      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe [1]'" sap:VirtualizedContainerService.HintSize="831,630" sap2010:WorkflowViewState.IdRef="WindowScope_16" InformativeScreenshot="8866c14d9e88fdd63eb7b3e9d6b5b39e" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='*Menu*- [Export]' /&gt;&lt;wnd cls='Jade:form' title='Export' /&gt;">
                         <ui:WindowScope.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,422" sap2010:WorkflowViewState.IdRef="Sequence_92">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,484" sap2010:WorkflowViewState.IdRef="Sequence_92">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If Condition="[B_Export]" DisplayName="If_Check_Export Window" sap:VirtualizedContainerService.HintSize="755,330" sap2010:WorkflowViewState.IdRef="If_23">
+                              <If Condition="[B_Export]" DisplayName="If_Check_Export Window" sap:VirtualizedContainerService.HintSize="755,392" sap2010:WorkflowViewState.IdRef="If_23">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1093,13 +1098,14 @@
                                   </ui:Click>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_73">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Error" Message="[&quot;Failed TO Click On Excel File&quot;]" />
+                                    <Throw Exception="[New SystemException(&quot;SE07: Failed to click on Excel file button in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_7" />
                                   </Sequence>
                                 </If.Else>
                               </If>
@@ -1158,21 +1164,33 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:UiElementExists>
-              <ui:RetryScope DisplayName="Retry Scope_Check_Whether File Exists Or Not" sap:VirtualizedContainerService.HintSize="2043,1993" sap2010:WorkflowViewState.IdRef="RetryScope_15">
+              <ui:RetryScope DisplayName="Retry Scope_Check_Whether File Exists Or Not" sap:VirtualizedContainerService.HintSize="2043,2193" sap2010:WorkflowViewState.IdRef="RetryScope_15">
                 <ui:RetryScope.ActivityBody>
                   <ActivityAction>
-                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="2001,1819" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="2001,2019" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="todaysPath" />
+                        <Variable x:TypeArguments="x:String" Name="FilePath" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="1959,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[todaysPath]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[now.Year.ToString+"\"+now.ToString("MMM")+"\"+now.Day.ToString+"\"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
                       <Assign sap:VirtualizedContainerService.HintSize="1959,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[VendorHistoryPath]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[Demo_Path+"TransactionHistory"+"\"]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[Demo_Path+todaysPath+"TransactionHistory"+"\"]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <If Condition="[not Directory.Exists(VendorHistoryPath)]" sap:VirtualizedContainerService.HintSize="1959,226" sap2010:WorkflowViewState.IdRef="If_46">
@@ -1180,7 +1198,15 @@
                           <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[VendorHistoryPath]" />
                         </If.Then>
                       </If>
-                      <ui:PathExists DisplayName="Path Exists" Exists="[B_File_Exists]" sap:VirtualizedContainerService.HintSize="1959,89" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[Demo_Path+&quot;TransactionHistory&quot;+&quot;\&quot;+Demo_AlphaKey+&quot;_&quot;+companyName.Trim.Replace(&quot; &quot;,&quot;&quot;)+&quot;.xls&quot;]" PathType="File">
+                      <Assign sap:VirtualizedContainerService.HintSize="1959,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[FilePath]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[VendorHistoryPath+Demo_AlphaKey+"_"+companyName.Trim.Replace(" ","")+".xls"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:PathExists DisplayName="Path Exists" Exists="[B_File_Exists]" sap:VirtualizedContainerService.HintSize="1959,89" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[FilePath]" PathType="File">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1205,7 +1231,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="873,22" sap2010:WorkflowViewState.IdRef="Delete_3" Path="[Demo_Path+&quot;TransactionHistory&quot;+&quot;\&quot;+Demo_AlphaKey+&quot;_&quot;+companyName.Trim.Replace(&quot; &quot;,&quot;&quot;)+&quot;.xls&quot;]" />
+                                  <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="873,22" sap2010:WorkflowViewState.IdRef="Delete_3" Path="[FilePath]" />
                                   <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe  Save As'" sap:VirtualizedContainerService.HintSize="873,757" sap2010:WorkflowViewState.IdRef="WindowScope_23" InformativeScreenshot="593881c96d5c18ff45d31f847208179f" Selector="&lt;wnd app='jade.exe' title='Save As' /&gt;">
                                     <ui:WindowScope.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
@@ -1232,7 +1258,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'ComboBox'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="[Demo_Path+&quot;TransactionHistory&quot;+&quot;\&quot;+Demo_AlphaKey+&quot;_&quot;+companyName.Trim.Replace(&quot; &quot;,&quot;&quot;)+&quot;.xls&quot;]">
+                                                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'ComboBox'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="[FilePath]">
                                                   <ui:TypeInto.Target>
                                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="88401846-c484-45ee-9eeb-ac9090b097bc" InformativeScreenshot="3a3da13ba98335aee5bad6f145c93ff7" Selector="&lt;wnd app='jade.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;">
                                                       <ui:Target.TimeoutMS>
@@ -1269,13 +1295,14 @@
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_128">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_128">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_50" Level="Error" Message="[&quot;Failed TO Save The File&quot;]" />
+                                                <Throw Exception="[New SystemException(&quot;SE08: Failed to save excel file in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_8" />
                                               </Sequence>
                                             </If.Else>
                                           </If>
@@ -1333,7 +1360,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'ComboBox'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[Demo_Path+&quot;TransactionHistory&quot;+&quot;\&quot;+Demo_AlphaKey+&quot;_&quot;+companyName.Trim.Replace(&quot; &quot;,&quot;&quot;)+&quot;.xls&quot;]">
+                                                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" AlterIfDisabled="True" DisplayName="Type Into 'ComboBox'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[FilePath]">
                                                   <ui:TypeInto.Target>
                                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="82a52b90-c923-4548-8710-e0decbdff075" InformativeScreenshot="3a3da13ba98335aee5bad6f145c93ff7" Selector="&lt;wnd app='jade.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;">
                                                       <ui:Target.TimeoutMS>
@@ -1370,13 +1397,14 @@
                                               </Sequence>
                                             </If.Then>
                                             <If.Else>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_118">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_118">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_46" Level="Error" Message="[&quot;Failed TO Save The File&quot;]" />
+                                                <Throw Exception="[New SystemException(&quot;SE08: Failed to save excel file in Download Outstanding, rerun the case, if the issue persists contact dev&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_9" />
                                               </Sequence>
                                             </If.Else>
                                           </If>
@@ -1471,10 +1499,10 @@
                   </Assign>
                 </Sequence>
               </While>
-              <ui:LogMessage DisplayName="Log Message_Submitted Ended" sap:VirtualizedContainerService.HintSize="2043,51" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Download Submitted  Invoice Detail in GBS is Ended&quot;+now.ToLongTimeString]">
+              <ui:LogMessage DisplayName="Log Message_Submitted Ended" sap:VirtualizedContainerService.HintSize="2043,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Download Submitted  Invoice Detail in GBS is Ended&quot;+now.ToLongTimeString]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>

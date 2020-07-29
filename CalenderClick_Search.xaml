@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="duration" Type="InArgument(x:Int32)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1514,3805</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,3705</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -45,12 +45,13 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="897,3600" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
+  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="939,3600" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3">
     <ui:RetryScope.ActivityBody>
       <ActivityAction>
-        <Sequence DisplayName="LocationClick" sap:VirtualizedContainerService.HintSize="855,3426" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="LocationClick" sap:VirtualizedContainerService.HintSize="897,3426" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="DateExist" />
             <Variable x:TypeArguments="x:String" Name="DateFrom" />
@@ -62,7 +63,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="813,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="855,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -84,7 +85,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Click 'ClickSearch: Button'" sap:VirtualizedContainerService.HintSize="813,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Click 'ClickSearch: Button'" sap:VirtualizedContainerService.HintSize="855,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -106,7 +107,7 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey 'jade.exe'" sap:VirtualizedContainerService.HintSize="813,154" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="s" KeyModifiers="None" SendWindowMessages="True" SpecialKey="False">
+          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey 'jade.exe'" sap:VirtualizedContainerService.HintSize="855,154" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="s" KeyModifiers="None" SendWindowMessages="True" SpecialKey="False">
             <ui:SendHotkey.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="745112aa-1290-4fc3-aefb-a172232fb7c1" InformativeScreenshot="67a4e48171dc1d3c53ffc774d078967a">
                 <ui:Target.TimeoutMS>
@@ -118,8 +119,8 @@
               </ui:Target>
             </ui:SendHotkey.Target>
           </ui:SendHotkey>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="813,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;key passed: s&quot;]" />
-          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Click 'Jade:Edit'" sap:VirtualizedContainerService.HintSize="813,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="855,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;key passed: s&quot;]" />
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Click 'Jade:Edit'" sap:VirtualizedContainerService.HintSize="855,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -141,7 +142,7 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:UiElementExists DisplayName="Element Exists 'Jade:Button'" Exists="[DateExist]" sap:VirtualizedContainerService.HintSize="813,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+          <ui:UiElementExists DisplayName="Element Exists 'Jade:Button'" Exists="[DateExist]" sap:VirtualizedContainerService.HintSize="855,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="15ddc9c6-b982-4647-b3f7-52fd69e987ab" InformativeScreenshot="3d46797b17fbbb16e41fee54b5e82e39" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='Properties for Transactions' /&gt;&lt;wnd aaname='Pick' cls='Jade:Button' title='&amp;amp;Pick' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -153,8 +154,8 @@
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="813,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Date window exist: &quot;+DateExist.ToString]" />
-          <If Condition="[DateExist]" sap:VirtualizedContainerService.HintSize="813,2271" sap2010:WorkflowViewState.IdRef="If_4">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="855,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Date window exist: &quot;+DateExist.ToString]" />
+          <If Condition="[DateExist]" sap:VirtualizedContainerService.HintSize="855,2271" sap2010:WorkflowViewState.IdRef="If_4">
             <If.Then>
               <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'jade.exe Properties'" sap:VirtualizedContainerService.HintSize="434,2124" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="ae286ead1c26445a99bda3a0b53c612c" Selector="&lt;wnd app='jade.exe' cls='Jade:form' title='Properties for Transactions' /&gt;">
                 <ui:WindowScope.Body>
@@ -315,7 +316,15 @@
               </ui:WindowScope>
             </If.Then>
             <If.Else>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Fault:Retry&quot;]" />
+              <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Fault:Retry&quot;]" />
+                <Throw Exception="[new SystemException(&quot;SE05: Calender data entry faulted.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </Sequence>
             </If.Else>
           </If>
         </Sequence>
