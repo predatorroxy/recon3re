@@ -72,18 +72,18 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="-- ReFrameWork - Robotic Enterprise Framework --&#xA;-- Mail item over here is mail item" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="816,786" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="-- ReFrameWork - Robotic Enterprise Framework --&#xA;-- Mail item over here is mail item" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="840,786" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">70,12.5</av:Point>
-        <x:Double x:Key="StateContainerWidth">782</x:Double>
+        <x:Double x:Key="StateContainerWidth">806</x:Double>
         <x:Double x:Key="StateContainerHeight">708</x:Double>
         <av:PointCollection x:Key="ConnectorLocation">130,50 160,50 160,49.9 274.5,49.9</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Get next transaction input data" DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="251,101" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Get next transaction input data" DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="260,109" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <Sequence sap2010:Annotation.AnnotationText="Data retrieval mechanism. The TransactionNumber variable holds the current transaction number. Incrementing this number means getting the next transaction. For a robot retry, the number is not increased, in case of application exception, until the max retry number.&#xA;TransactionItem type needs to be changed accordingly." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="897,873" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
@@ -175,10 +175,10 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">274.5,181.5</av:Point>
-          <av:Size x:Key="ShapeSize">251,101</av:Size>
+          <av:Size x:Key="ShapeSize">260,109</av:Size>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <x:Double x:Key="StateContainerWidth">217</x:Double>
-          <x:Double x:Key="StateContainerHeight">34</x:Double>
+          <x:Double x:Key="StateContainerWidth">226</x:Double>
+          <x:Double x:Key="StateContainerHeight">42.000000000000114</x:Double>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -186,16 +186,16 @@
         <Transition DisplayName="New Transaction" sap:VirtualizedContainerService.HintSize="450,796" sap2010:WorkflowViewState.IdRef="Transition_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">400,282.5 400,312.5 400.5,312.5 400.5,380</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">404.5,290.5 404.5,320.5 400.5,320.5 400.5,380</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="484,1246" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="A transaction either succeeds or fails with a Business Rule Exception or a System Error. For System Error, it can be retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="484,1426" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
-                <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="438,750" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="438,890" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,12 +203,23 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence DisplayName="Process the current TransactionItem" sap:VirtualizedContainerService.HintSize="376,461" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence DisplayName="Process the current TransactionItem" sap:VirtualizedContainerService.HintSize="376,561" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="ExtractedCompanyList" />
+                      </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:DateTime">[ExtractedLogstartTime]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:DateTime">[Now]</InArgument>
+                        </Assign.Value>
+                      </Assign>
                       <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:BusinessRuleException">[BusinessRuleException]</OutArgument>
@@ -219,50 +230,128 @@
                       </Assign>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EmailExtractionSeq workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="E2E_Process.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="MailFolderPath">[strOutlookFolderPath.Trim]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="AccountName">[strOutlookProfileName.Trim]</InArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_MappingTemplate">[DT_SupplierMappingTemplate]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="VendorNameHeader">[strVendorNameHeader.Trim]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="DomainNameHeader">[strDomainHeader.Trim]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="AlphaKeyHeader">[strAlphaKeyHeader.Trim]</InArgument>
-                          <InArgument x:TypeArguments="snm:MailMessage" x:Key="Mail">[TransactionItem]</InArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="AlphaKey" />
-                          <InArgument x:TypeArguments="x:String" x:Key="InputFolderPath">[InputFolderPath]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="BusinessExceptionFolderPath">[strBussinessExceptionPath]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="SystemExceptionFolderPath">[strSystemExceptionPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="MailFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strOutlookFolderPath.Trim" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="AccountName">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strOutlookProfileName.Trim" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_MappingTemplate">
+                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DT_SupplierMappingTemplate" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="VendorNameHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strVendorNameHeader.Trim" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="DomainNameHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDomainHeader.Trim" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="AlphaKeyHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAlphaKeyHeader.Trim" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="snm:MailMessage" x:Key="Mail">
+                            <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="TransactionItem" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="AlphaKey">
+                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedAlphaKey" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="InputFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InputFolderPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="BusinessExceptionFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strBussinessExceptionPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="SystemExceptionFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSystemExceptionPath" />
+                          </InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="VendorFolderPath" />
                           <OutArgument x:TypeArguments="x:String" x:Key="VendorExcelFolderPath" />
                           <OutArgument x:TypeArguments="x:String" x:Key="VendorPDFFolderPath" />
                           <OutArgument x:TypeArguments="x:String" x:Key="VendorImageFolderPath" />
                           <OutArgument x:TypeArguments="x:String" x:Key="VendorOtherFolderPath" />
-                          <OutArgument x:TypeArguments="x:String" x:Key="VendorEmailPath" />
-                          <InArgument x:TypeArguments="x:String" x:Key="ImageExtension_list">[strImageExtension]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="PDfExtension_list">[strPDFExtension]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ExcelExtension_list">[strExcelExtension]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_StartHeader">[strTableStartHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_EndHeader">[strTableEndHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_startEndHeader">[strTableEndStartHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ExtractedFolderPath">[ExtractedFilesFolderPath]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_inoviceHeader">[strTableInvoiceHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_DateHeader">[strTableDateHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_VATHeader">[strTableVATHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_AmountHeader">[strTableAmountHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_TotalAmountHeader">[strTableTotalAmountHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_addressHeader">[strTableAddressHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strTableDurationHeader">[strTableDateFormatHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intHistoryDuration">[intCalenderDuration]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strUsername">[StrFoodQuestUsername]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strPassword">[StrFoodQuestPassword]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakePath">[strGlobalBakePath]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intCompanyAllLoc">[intCompanySwitchLoc]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intVendorAllLoc">[intVendorAll_Count]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strTableCreditPeriod">[strDurationHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strCompanyHeader">[strCompanyHeader]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intMonthDivision">[intMonthDivision]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakeHistorySheetName">[GlobalBakeSheetName]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ReconTemplatePath">[ReconTemplatePath]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="DateFormatSplitter">[DateFormatSplitter]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strTableUniqueStartHeader">[strTableUniqueStartHeader]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="VendorEmailPath">
+                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedMailPath" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ImageExtension_list">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strImageExtension" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="PDfExtension_list">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPDFExtension" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ExcelExtension_list">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strExcelExtension" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_StartHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableStartHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_EndHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableEndHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_startEndHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableEndStartHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ExtractedFolderPath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractedFilesFolderPath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_inoviceHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableInvoiceHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_DateHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableDateHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_VATHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableVATHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_AmountHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableAmountHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_TotalAmountHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableTotalAmountHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_addressHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableAddressHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strTableDurationHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableDateFormatHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intHistoryDuration">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCalenderDuration" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strUsername">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrFoodQuestUsername" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strPassword">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrFoodQuestPassword" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakePath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strGlobalBakePath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intCompanyAllLoc">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCompanySwitchLoc" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intVendorAllLoc">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intVendorAll_Count" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strTableCreditPeriod">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDurationHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strCompanyHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCompanyHeader" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intMonthDivision">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intMonthDivision" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakeHistorySheetName">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GlobalBakeSheetName" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ReconTemplatePath">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReconTemplatePath" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="DateFormatSplitter">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DateFormatSplitter" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strTableUniqueStartHeader">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableUniqueStartHeader" />
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
@@ -452,7 +541,7 @@
                 <Transition DisplayName="Rule Exception" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">412.05,522 412.05,541.8 678.5,541.8 678.5,211.8 525.5,211.8</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">412.05,522 412.05,680 762.5,680 762.5,214.2 534.5,214.2</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -468,7 +557,7 @@
                 <Transition sap2010:Annotation.AnnotationText="No need for any action here, in case of success simply go to next transaction" DisplayName="Success" sap:VirtualizedContainerService.HintSize="450,536" sap2010:WorkflowViewState.IdRef="Transition_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">458.25,522 458.25,552 555.5,552 555.5,252.2 525.5,252.2</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">458.25,522 458.25,552 564.5,552 564.5,257.8 534.5,257.8</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">59</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">52</x:Int32>
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -485,7 +574,7 @@
                 <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">354.3,522 354.3,552 778.5,552 778.5,226.95 525.5,226.95</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">354.3,522 354.3,642 674.5,642 674.5,230.55 534.5,230.55</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">23</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">32</x:Int32>
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -509,7 +598,7 @@
         <Transition sap2010:Annotation.AnnotationText="This is a simple mecanism to stop the process.&#xA;In reallife scenario you can stop the process when there is no more data to process or on a schedule." DisplayName="No Data" sap:VirtualizedContainerService.HintSize="450,853" sap2010:WorkflowViewState.IdRef="Transition_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">400,282.5 400,312.5 145,312.5 145,281.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">404.5,290.5 404.5,320.5 145,320.5 145,281.5</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -618,7 +707,7 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read Config, Init Applications" DisplayName="Init" sap:VirtualizedContainerService.HintSize="254,92" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <TryCatch DisplayName="Catch intialization exceptions" sap:VirtualizedContainerService.HintSize="1647,3891" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -626,7 +715,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <TryCatch.Try>
-            <Sequence DisplayName="Init State" sap:VirtualizedContainerService.HintSize="1609,6717" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Init State" sap:VirtualizedContainerService.HintSize="1609,3624" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -646,10 +735,10 @@
                   <InArgument x:TypeArguments="s:Exception">[Nothing]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If Condition="[Config is Nothing]" DisplayName="If first run - read Config file" sap:VirtualizedContainerService.HintSize="1567,1061" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[Config is Nothing]" DisplayName="If first run - read Config file" sap:VirtualizedContainerService.HintSize="1567,51" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -743,13 +832,13 @@
                   </Sequence>
                 </If.Then>
               </If>
-              <Sequence sap2010:Annotation.AnnotationText="To define the BotRunner:&#xA;and read details from config" DisplayName="Init_Read From Config" sap:VirtualizedContainerService.HintSize="1567,2191" sap2010:WorkflowViewState.IdRef="Sequence_24">
+              <Sequence sap2010:Annotation.AnnotationText="To define the BotRunner:&#xA;and read details from config" DisplayName="Init_Read From Config" sap:VirtualizedContainerService.HintSize="1567,108" sap2010:WorkflowViewState.IdRef="Sequence_24">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="BotRunner" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
@@ -1476,10 +1565,10 @@
             </Sequence>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -1516,7 +1605,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">38</x:Int32>
-              <av:PointCollection x:Key="ConnectorLocation">401.5,100.5 401.5,130.5 400,130.5 400,181.5</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">401.5,100.5 401.5,130.5 404.5,130.5 404.5,181.5</av:PointCollection>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1619,6 +1708,15 @@
       <Variable x:TypeArguments="sd:DataTable" Name="DT_SupplierProcessLogs" />
       <Variable x:TypeArguments="x:String" Name="BotProcessLogsPath" />
       <Variable x:TypeArguments="x:String" Name="SupplierProcessLogsPath" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedAlphaKey" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedReconPath" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedMailPath" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedPeriod_month" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedSupplierName" />
+      <Variable x:TypeArguments="s:DateTime" Name="ExtractedLogstartTime" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedPeriod_year" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedCompanyName" />
+      <Variable x:TypeArguments="x:String" Name="ExtractedAmount" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>
