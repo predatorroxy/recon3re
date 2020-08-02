@@ -59,7 +59,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1269,5703</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,5564</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EmailExtractionSeq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -119,7 +119,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="647,5438" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="610,5499" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SOAInvoiceHeader" />
       <Variable x:TypeArguments="x:String" Name="SOADateHeader" />
@@ -152,7 +152,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Vendor name and alpha key extraction.&#xA;Download attachment and file movement" DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="605,2946" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    <Sequence sap2010:Annotation.AnnotationText="Vendor name and alpha key extraction.&#xA;Download attachment and file movement" DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="568,3007" sap2010:WorkflowViewState.IdRef="Sequence_26">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strMailFrom" />
         <Variable x:TypeArguments="x:String" Name="strMailSubject" />
@@ -168,7 +168,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="563,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign sap:VirtualizedContainerService.HintSize="526,60" sap2010:WorkflowViewState.IdRef="Assign_21">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[TodaysPath]</OutArgument>
         </Assign.To>
@@ -176,7 +176,7 @@
           <InArgument x:TypeArguments="x:String">[now.Year.ToString+"\"+now.ToString("MMM")+"\"+now.Day.ToString+"\"]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:MultipleAssign DisplayName="mail_Multiple Assign" sap:VirtualizedContainerService.HintSize="563,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+      <ui:MultipleAssign DisplayName="mail_Multiple Assign" sap:VirtualizedContainerService.HintSize="526,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
@@ -238,8 +238,8 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="563,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Extracted Domain: &quot;+strDomainName.ToString]" />
-      <Sequence sap2010:Annotation.AnnotationText="Vendor Alpha key and Vendor name determination&#xA;Domain Check&#xA;Body and Subject check" DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="563,2079" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Extracted Domain: &quot;+strDomainName.ToString]" />
+      <Sequence sap2010:Annotation.AnnotationText="Vendor Alpha key and Vendor name determination&#xA;Domain Check&#xA;Body and Subject check" DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="526,1303" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="BoolAlternateName" />
           <Variable x:TypeArguments="x:Boolean" Name="BoolFoodQuestFlag" />
@@ -251,7 +251,7 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each row in mapping template" DataTable="[DT_MappingTemplate]" DisplayName="For Each Row in DT_MappingTemplate" sap:VirtualizedContainerService.HintSize="521,1006" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each row in mapping template" DataTable="[DT_MappingTemplate]" DisplayName="For Each Row in DT_MappingTemplate" sap:VirtualizedContainerService.HintSize="430,1006" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -1681,24 +1681,24 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <If sap2010:Annotation.AnnotationText="Check if AlphaKeyFound is false.&#xA;If false throw error" Condition="[not BoolVendorFound]" DisplayName="If Throw Error" sap:VirtualizedContainerService.HintSize="521,884" sap2010:WorkflowViewState.IdRef="If_18">
+        <If sap2010:Annotation.AnnotationText="Check if AlphaKeyFound is false.&#xA;If false throw error" Condition="[not BoolVendorFound]" DisplayName="If Throw Error" sap:VirtualizedContainerService.HintSize="430,108" sap2010:WorkflowViewState.IdRef="If_18">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence DisplayName="ErrorSequence" sap:VirtualizedContainerService.HintSize="376,694" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <Sequence DisplayName="ErrorSequence" sap:VirtualizedContainerService.HintSize="478,864" sap2010:WorkflowViewState.IdRef="Sequence_18">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;BoolVendorFound: &quot;+BoolVendorFound.ToString]" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Fatal" Message="[&quot;VendorError: VendorNotFound&quot;]" />
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;BoolVendorFound: &quot;+BoolVendorFound.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Fatal" Message="[&quot;VendorError: VendorNotFound&quot;]" />
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,51" sap2010:WorkflowViewState.IdRef="CommentOut_12">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_65">
                     <sap:WorkflowViewStateService.ViewState>
@@ -1716,24 +1716,41 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
-              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[VendorEmailPath]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[InputFolderPath+STRmailDate+".eml"]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:SaveMail DisplayName="Save Mail Message" FilePath="[VendorEmailPath]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMail_5" MailMessage="[Mail]" />
-              <Throw Exception="[new BusinessRuleException(&quot;BE:01 Vendor not found in domain, subject or body of the email with respect to supplier mapping template. Manually verify the deatails and update.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,357" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,279" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[VendorEmailPath]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[InputFolderPath+STRmailDate+".eml"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:SaveMail DisplayName="Save Mail Message" FilePath="[VendorEmailPath]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="SaveMail_5" MailMessage="[Mail]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <Throw Exception="[new BusinessRuleException(&quot;BE:01 Vendor not found in domain, subject or body of the email with respect to supplier mapping template. Manually verify the deatails and update.&quot;)]" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
             </Sequence>
           </If.Then>
         </If>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Create folder with Alphakey name and save attachment;&#xA;File movement to respective folders" DisplayName="VendorFolderCreation" sap:VirtualizedContainerService.HintSize="563,138" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <Sequence sap2010:Annotation.AnnotationText="Create folder with Alphakey name and save attachment;&#xA;File movement to respective folders" DisplayName="VendorFolderCreation" sap:VirtualizedContainerService.HintSize="526,975" sap2010:WorkflowViewState.IdRef="Sequence_25">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
@@ -2066,7 +2083,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="605,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="568,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_249">
@@ -2080,7 +2097,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="605,2222" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="568,2222" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counter" />
         <Variable x:TypeArguments="x:Boolean" Name="SheetTrimmerFlag" />
@@ -2101,7 +2118,7 @@
       </Assign>
       <If Condition="[Directory.GetFiles(VendorExcelFolderPath).Count&gt;0]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_45">
         <If.Else>
-          <Throw Exception="[New BusinessRuleException(&quot;BE:11: Excel file count is zero, either the mail does not contain any excel/attachment.Check Attachments&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
+          <Throw Exception="[New BusinessRuleException(&quot;BE:12: Excel file count is zero, either the mail does not contain any excel/attachment.Check Attachments&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
         </If.Else>
       </If>
       <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each excel file" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484,1782" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
@@ -2127,7 +2144,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1329,670" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1153,670" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:List(x:String)" Name="ExcelSheets" />
                       </Sequence.Variables>
@@ -2136,8 +2153,8 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="1287,22" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[ExcelSheets]" />
-                      <If Condition="[ExcelSheets.Count&gt;0]" sap:VirtualizedContainerService.HintSize="1287,417" sap2010:WorkflowViewState.IdRef="If_28">
+                      <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets" sap:VirtualizedContainerService.HintSize="1111,22" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[ExcelSheets]" />
+                      <If Condition="[ExcelSheets.Count&gt;0]" sap:VirtualizedContainerService.HintSize="1111,417" sap2010:WorkflowViewState.IdRef="If_28">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2307,7 +2324,7 @@
                           <Throw Exception="[new BusinessRuleException(&quot;BE:03: Rare exception: No sheet in excel, Verify the excel&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
                         </If.Else>
                       </If>
-                      <ui:ExcelCloseWorkbook DisplayName="Close Workbook" sap:VirtualizedContainerService.HintSize="1287,59" sap2010:WorkflowViewState.IdRef="ExcelCloseWorkbook_1" Workbook="[ityu]" />
+                      <ui:ExcelCloseWorkbook DisplayName="Close Workbook" sap:VirtualizedContainerService.HintSize="1111,59" sap2010:WorkflowViewState.IdRef="ExcelCloseWorkbook_1" Workbook="[ityu]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ExcelApplicationScope.Body>

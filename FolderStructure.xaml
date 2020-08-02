@@ -9,11 +9,12 @@
     <x:Property Name="RetryFolderaPath" Type="OutArgument(x:String)" />
     <x:Property Name="SuccessFolderPath" Type="OutArgument(x:String)" />
     <x:Property Name="ExtractedFilesFolderPath" Type="OutArgument(x:String)" />
+    <x:Property Name="ScreenShotFolderPath" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1526,6151</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1526,6093</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FolderStructure_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -41,7 +42,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -67,7 +68,7 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FolderStructure" sap:VirtualizedContainerService.HintSize="1536,6046" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FolderStructure" sap:VirtualizedContainerService.HintSize="1536,5988" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TodaysPath" />
       <Variable x:TypeArguments="s:String[]" Name="FolderArray" />
@@ -123,7 +124,7 @@
         </Sequence>
       </If.Then>
     </If>
-    <Sequence DisplayName="ExceptionFolder" sap:VirtualizedContainerService.HintSize="1494,2698" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="ExceptionFolder" sap:VirtualizedContainerService.HintSize="1494,2820" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="ExceptionFolderPath" />
         <Variable x:TypeArguments="x:String" Name="BusinessExceptionFolderPath" />
@@ -136,7 +137,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1452,222" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1452,253" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -177,6 +178,14 @@
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
                 <InArgument x:TypeArguments="x:String">[SystemExceptionFolderPath+TodaysPath]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[ScreenShotFolderPath]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[FolderPath+"Exception\Screenshot\"]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
@@ -290,6 +299,17 @@
           </Sequence>
         </If.Else>
       </If>
+      <If Condition="[not Directory.Exists(ScreenShotFolderPath)]" DisplayName="If create screenshot folder" sap:VirtualizedContainerService.HintSize="1452,51" sap2010:WorkflowViewState.IdRef="If_10">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_12" Path="[ScreenShotFolderPath]" />
+        </If.Then>
+      </If>
       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1452,261" sap2010:WorkflowViewState.IdRef="CommentOut_1">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -303,7 +323,7 @@
         </ui:CommentOut.Body>
       </ui:CommentOut>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="{}{&quot;Input&quot;,&quot;ProcessedLogs&quot;,&quot;Retry&quot;,&quot;Success&quot;,&quot;ExtractedFiles&quot;}" DisplayName="{}{&quot;Input&quot;,&quot;ProcessedLogs&quot;,&quot;Retry&quot;,&quot;Success&quot;,&quot;ExtractedFiles&quot;}" sap:VirtualizedContainerService.HintSize="1494,1987" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <Sequence sap2010:Annotation.AnnotationText="{}{&quot;Input&quot;,&quot;ProcessedLogs&quot;,,&quot;Success&quot;,&quot;ExtractedFiles&quot;}" DisplayName="{}{&quot;Input&quot;,&quot;ProcessedLogs&quot;,&quot;Success&quot;,&quot;ExtractedFiles&quot;}" sap:VirtualizedContainerService.HintSize="923,1812" sap2010:WorkflowViewState.IdRef="Sequence_14">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -335,16 +355,16 @@
           <OutArgument x:TypeArguments="s:String[]">[FolderArray]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="s:String[]">[{"Input","ProcessedLogs","Retry","Success","ExtractedFiles"}]</InArgument>
+          <InArgument x:TypeArguments="s:String[]">[{"Input","ProcessedLogs","Success","ExtractedFiles"}]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each in FolderArray" sap:VirtualizedContainerService.HintSize="881,1494" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[FolderArray]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each in FolderArray" sap:VirtualizedContainerService.HintSize="881,1319" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[FolderArray]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="FolderName" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Each Folder" sap:VirtualizedContainerService.HintSize="845,1360" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <Sequence DisplayName="Each Folder" sap:VirtualizedContainerService.HintSize="845,1185" sap2010:WorkflowViewState.IdRef="Sequence_13">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="path" />
                 <Variable x:TypeArguments="x:Boolean" Name="pathExist5" />
@@ -354,9 +374,9 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[RunType.ToLower.Equals(&quot;bot&quot;)]" sap:VirtualizedContainerService.HintSize="803,549" sap2010:WorkflowViewState.IdRef="If_9">
+              <If Condition="[RunType.ToLower.Equals(&quot;bot&quot;)]" sap:VirtualizedContainerService.HintSize="803,374" sap2010:WorkflowViewState.IdRef="If_9">
                 <If.Then>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FolderName.Trim]" sap:VirtualizedContainerService.HintSize="496,401" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[FolderName.Trim]" sap:VirtualizedContainerService.HintSize="496,226" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                     <Switch.Default>
                       <Throw Exception="[new Exception(&quot;Unaccounted Switch flow: FolderName in FolderStructure Error&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                     </Switch.Default>
