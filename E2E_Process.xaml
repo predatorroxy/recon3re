@@ -12,9 +12,6 @@
     <x:Property Name="SystemExceptionFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="VendorFolderPath" Type="OutArgument(x:String)" />
     <x:Property Name="VendorExcelFolderPath" Type="OutArgument(x:String)" />
-    <x:Property Name="VendorPDFFolderPath" Type="OutArgument(x:String)" />
-    <x:Property Name="VendorImageFolderPath" Type="OutArgument(x:String)" />
-    <x:Property Name="VendorOtherFolderPath" Type="OutArgument(x:String)" />
     <x:Property Name="VendorEmailPath" Type="OutArgument(x:String)" />
     <x:Property Name="ImageExtension_list" Type="InArgument(x:String)" />
     <x:Property Name="PDfExtension_list" Type="InArgument(x:String)" />
@@ -49,11 +46,20 @@
     <x:Property Name="ExtractedAlphaKey" Type="OutArgument(x:String)" />
     <x:Property Name="DT_processLog" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="DT_supplierProcessLog" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="ChequeTracker_Advance" Type="InArgument(x:String)" />
+    <x:Property Name="ChequeTracker_FoodQuest" Type="InArgument(x:String)" />
+    <x:Property Name="ChequeTracker_FQBackup" Type="InArgument(x:String)" />
+    <x:Property Name="ChequeTracker_sheetName" Type="InArgument(x:String)" />
+    <x:Property Name="VBAFormatingPath" Type="InArgument(x:String)" />
+    <x:Property Name="ExtractedTotalAmount" Type="OutArgument(x:Double)" />
+    <x:Property Name="ExtractedDuplicateFlag" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="BotStartTime" Type="InArgument(s:DateTime)" />
+    <x:Property Name="ReconFolderPath" Type="OutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1269,3394</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1269,5703</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EmailExtractionSeq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -113,7 +119,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="500,3249" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="647,5438" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SOAInvoiceHeader" />
       <Variable x:TypeArguments="x:String" Name="SOADateHeader" />
@@ -137,13 +143,16 @@
       <Variable x:TypeArguments="x:String" Name="SOAUniqueStartHeader" />
       <Variable x:TypeArguments="x:String" Name="ExtractedCompanyName" />
       <Variable x:TypeArguments="x:String" Name="AlphaKey" />
+      <Variable x:TypeArguments="x:String" Name="VendorPDFFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="VendorOtherFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="VendorImageFolderPath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Vendor name and alpha key extraction.&#xA;Download attachment and file movement" DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="458,1005" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    <Sequence sap2010:Annotation.AnnotationText="Vendor name and alpha key extraction.&#xA;Download attachment and file movement" DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="605,2946" sap2010:WorkflowViewState.IdRef="Sequence_26">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strMailFrom" />
         <Variable x:TypeArguments="x:String" Name="strMailSubject" />
@@ -159,7 +168,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign sap:VirtualizedContainerService.HintSize="563,60" sap2010:WorkflowViewState.IdRef="Assign_21">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[TodaysPath]</OutArgument>
         </Assign.To>
@@ -167,7 +176,7 @@
           <InArgument x:TypeArguments="x:String">[now.Year.ToString+"\"+now.ToString("MMM")+"\"+now.Day.ToString+"\"]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:MultipleAssign DisplayName="mail_Multiple Assign" sap:VirtualizedContainerService.HintSize="338,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
+      <ui:MultipleAssign DisplayName="mail_Multiple Assign" sap:VirtualizedContainerService.HintSize="563,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_8">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
@@ -229,20 +238,20 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Extracted Domain: &quot;+strDomainName.ToString]" />
-      <Sequence sap2010:Annotation.AnnotationText="Vendor Alpha key and Vendor name determination&#xA;Domain Check&#xA;Body and Subject check" DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="338,138" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="563,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Extracted Domain: &quot;+strDomainName.ToString]" />
+      <Sequence sap2010:Annotation.AnnotationText="Vendor Alpha key and Vendor name determination&#xA;Domain Check&#xA;Body and Subject check" DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="563,2079" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="BoolAlternateName" />
           <Variable x:TypeArguments="x:Boolean" Name="BoolFoodQuestFlag" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each row in mapping template" DataTable="[DT_MappingTemplate]" DisplayName="For Each Row in DT_MappingTemplate" sap:VirtualizedContainerService.HintSize="430,1006" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each row in mapping template" DataTable="[DT_MappingTemplate]" DisplayName="For Each Row in DT_MappingTemplate" sap:VirtualizedContainerService.HintSize="521,1006" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -1672,10 +1681,10 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <If sap2010:Annotation.AnnotationText="Check if AlphaKeyFound is false.&#xA;If false throw error" Condition="[not BoolVendorFound]" DisplayName="If Throw Error" sap:VirtualizedContainerService.HintSize="430,108" sap2010:WorkflowViewState.IdRef="If_18">
+        <If sap2010:Annotation.AnnotationText="Check if AlphaKeyFound is false.&#xA;If false throw error" Condition="[not BoolVendorFound]" DisplayName="If Throw Error" sap:VirtualizedContainerService.HintSize="521,884" sap2010:WorkflowViewState.IdRef="If_18">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
@@ -1721,7 +1730,7 @@
           </If.Then>
         </If>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="Create folder with Alphakey name and save attachment;&#xA;File movement to respective folders" DisplayName="VendorFolderCreation" sap:VirtualizedContainerService.HintSize="338,138" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <Sequence sap2010:Annotation.AnnotationText="Create folder with Alphakey name and save attachment;&#xA;File movement to respective folders" DisplayName="VendorFolderCreation" sap:VirtualizedContainerService.HintSize="563,138" sap2010:WorkflowViewState.IdRef="Sequence_25">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2057,7 +2066,7 @@
         </If>
       </Sequence>
     </Sequence>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="458,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="605,98" sap2010:WorkflowViewState.IdRef="MultipleAssign_29">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_249">
@@ -2071,7 +2080,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="458,1974" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="605,2222" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counter" />
         <Variable x:TypeArguments="x:Boolean" Name="SheetTrimmerFlag" />
@@ -2082,7 +2091,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_10">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
         </Assign.To>
@@ -2090,7 +2099,12 @@
           <InArgument x:TypeArguments="x:Int32">0</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each excel file" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="416,1782" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
+      <If Condition="[Directory.GetFiles(VendorExcelFolderPath).Count&gt;0]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_45">
+        <If.Else>
+          <Throw Exception="[New BusinessRuleException(&quot;BE:11: Excel file count is zero, either the mail does not contain any excel/attachment.Check Attachments&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
+        </If.Else>
+      </If>
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each excel file" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="484,1782" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
@@ -2602,18 +2616,81 @@
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Recon start&quot;]" />
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Recon_Updated workflow" sap:VirtualizedContainerService.HintSize="338,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Recon_Updated.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="Recon_template">[ReconTemplatePath]</InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="z">[SOAintCreditPeriod]</InArgument>
-                  <InArgument x:TypeArguments="s:DateTime" x:Key="maildate">[MailDate]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_excel">[VendorMailExtractedFolderPath+"Transaction_history.xlsx"]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_folder_Path">[TransactionHistoryFolderPath]</InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="mailDate_limit">[intMonthDivision]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Sheet_transaction_history">[GlobalBakeHistorySheetName]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Vendor_SOA_excel">[strSOApath]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="PaymentRaisedfor">[strCompanyList]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Supplier_Name">[ExtractedCompanyName]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="Recon_Output_FolderPath">[VendorMailExtractedFolderPath]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="VBA_formattingcode_location">C:\Users\rpa\Documents\UiPath\REFramework_Mails\ReconFormatting_VBA Code.txt</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Recon_template">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReconTemplatePath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="z">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="SOAintCreditPeriod" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="maildate">
+                    <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="MailDate" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_excel">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="VendorMailExtractedFolderPath+&quot;Transaction_history.xlsx&quot;" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Transaction_history_folder_Path">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TransactionHistoryFolderPath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="mailDate_limit">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intMonthDivision" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Sheet_transaction_history">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GlobalBakeHistorySheetName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Vendor_SOA_excel">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSOApath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="PaymentRaisedfor">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCompanyList" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Supplier_Name">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractedCompanyName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Recon_Output_FolderPath">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="VendorMailExtractedFolderPath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="VBA_formattingcode_location">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="VBAFormatingPath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Cheque_Tracker_Recon_Sheet">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ChequeTracker_sheetName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Advance_cheque_tracker">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ChequeTracker_Advance" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Foodquest_cheque_tracker_primary">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ChequeTracker_FoodQuest" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="Foodquest_cheque_tracker_secondary">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ChequeTracker_FQBackup" />
+                  </InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="DuplicateInvoiceFlag">
+                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ExtractedDuplicateFlag" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Period_Month">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedPeriod_month" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Period_year">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedPeriod_year" />
+                  </OutArgument>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_BotprocessLogs">
+                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_processLog" />
+                  </InOutArgument>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_SupplierProcessedLogs">
+                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_supplierProcessLog" />
+                  </InOutArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="BotStartTime">
+                    <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="BotStartTime" />
+                  </InArgument>
+                  <OutArgument x:TypeArguments="x:Double" x:Key="TotalAmount">
+                    <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="ExtractedTotalAmount" />
+                  </OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="AlphaKey">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AlphaKey" />
+                  </InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="ReconFolder">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ReconFolderPath" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
@@ -2659,7 +2736,7 @@
               </Assign>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Recon Completed&quot;]" />
               <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="338,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                 <ui:CommentOut.Body>
                   <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,181" sap2010:WorkflowViewState.IdRef="Sequence_35">
                     <sap:WorkflowViewStateService.ViewState>
