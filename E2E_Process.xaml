@@ -60,7 +60,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1847,9782</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1847,9774</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EmailExtractionSeq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -120,7 +120,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="1857,9717" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="1857,9709" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SOAInvoiceHeader" />
       <Variable x:TypeArguments="x:String" Name="SOADateHeader" />
@@ -2159,7 +2159,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="1815,2975" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="1815,2967" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counter" />
         <Variable x:TypeArguments="x:Boolean" Name="SheetTrimmerFlag" />
@@ -2183,13 +2183,13 @@
           <Throw Exception="[New BusinessRuleException(&quot;BE:12: Excel file count is zero, either the mail does not contain any excel/attachment.Check Attachments&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
         </If.Else>
       </If>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each excel file" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="937,2535" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each excel file" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="937,2527" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="ExcelPath" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="901,2370" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="901,2362" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="ExcelSheetName" />
                 <Variable x:TypeArguments="x:String" Name="strSOApath" />
@@ -2693,7 +2693,24 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="859,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Recon start&quot;]" />
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="859,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[ExtractedSupplierName]" />
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="859,51" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[ExtractedSupplierName]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Recon_Updated workflow" sap:VirtualizedContainerService.HintSize="859,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Recon_Updated.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="Recon_template">

@@ -333,7 +333,7 @@
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope &quot;to read individual files&quot;" sap:VirtualizedContainerService.HintSize="434,1078" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" Workbook="[init_WB]" WorkbookPath="[file.ToString]">
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope &quot;to read individual files&quot;" sap:VirtualizedContainerService.HintSize="434,1078" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" Visible="False" Workbook="[init_WB]" WorkbookPath="[file.ToString]">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
@@ -666,7 +666,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" DisplayName="Excel Application Scope &quot;Reading vendor SOA file&quot;" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" Workbook="[Vendor_WB]" WorkbookPath="[Vendor_SOA_excel]">
+      <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" DisplayName="Excel Application Scope &quot;Reading vendor SOA file&quot;" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" Visible="False" Workbook="[Vendor_WB]" WorkbookPath="[Vendor_SOA_excel]">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
@@ -711,7 +711,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ExcelApplicationScope>
-      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope &quot;Reading Transaction history&quot;" sap:VirtualizedContainerService.HintSize="434,657" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" Workbook="[Transaction_history_WB]" WorkbookPath="[Transaction_history_excel]">
+      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope &quot;Reading Transaction history&quot;" sap:VirtualizedContainerService.HintSize="434,657" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" Visible="False" Workbook="[Transaction_history_WB]" WorkbookPath="[Transaction_history_excel]">
         <ui:ExcelApplicationScope.Body>
           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
             <ActivityAction.Argument>
@@ -4176,7 +4176,7 @@
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope&quot;Reading from Recon template&quot;" sap:VirtualizedContainerService.HintSize="618,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_19" Workbook="[Recon_template_WB]" WorkbookPath="[Recon_template]">
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope&quot;Reading from Recon template&quot;" sap:VirtualizedContainerService.HintSize="618,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_19" Visible="False" Workbook="[Recon_template_WB]" WorkbookPath="[Recon_template]">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
@@ -4409,7 +4409,7 @@
                   <InArgument x:TypeArguments="x:String">[Recon_Output_FolderPath+"\"]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope &quot;Writing to Recon file&quot;&quot;" sap:VirtualizedContainerService.HintSize="618,7172" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_20" Workbook="[Recon_output_WB]" WorkbookPath="[Recon_Output_FolderPath+&quot;\&quot;+Vendor_name_Recon+&quot;_Recon_&quot;+ReconOutput_CompanyName+&quot;.xlsx&quot;]">
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope &quot;Writing to Recon file&quot;&quot;" sap:VirtualizedContainerService.HintSize="618,7172" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_20" Visible="False" Workbook="[Recon_output_WB]" WorkbookPath="[Recon_Output_FolderPath+&quot;\&quot;+Vendor_name_Recon+&quot;_Recon_&quot;+ReconOutput_CompanyName+&quot;.xlsx&quot;]">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
@@ -4422,7 +4422,7 @@
                           <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[Duplicate_Main_DT.rows.Count =0]" DisplayName="If &quot;Duplicate invoice Found&quot; " sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="If_187">
+                      <If Condition="[Duplicate_Main_DT.rows.Count =0]" DisplayName="If &quot;Duplicate invoice Found&quot; " sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_187">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4473,7 +4473,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <ui:ExcelWriteRange AddHeaders="True" DataTable="[Transaction_history_DT]" DisplayName="Write Range &quot;G&quot;" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_62" SheetName="Sheet_G (Transaction History)" StartingCell="A1">
+                      <ui:ExcelWriteRange AddHeaders="True" DataTable="[Transaction_history_DT]" DisplayName="Write Range &quot;G&quot;" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_62" SheetName="Sheet_G (Transaction History)" StartingCell="A1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4481,8 +4481,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteRange>
-                      <ui:ExcelSetRangeColor Color="[system.Drawing.Color.Yellow]" DisplayName="Set Range Color" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_34" Range="A1:L1" SheetName="Sheet_G (Transaction History)" />
-                      <ui:ExcelWriteRange AddHeaders="True" DataTable="[Vendor_SOA_DT]" DisplayName="Write Range &quot;A&quot;" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_63" SheetName="Sheet_A(vendor)" StartingCell="A1">
+                      <ui:ExcelSetRangeColor Color="[system.Drawing.Color.Yellow]" DisplayName="Set Range Color" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_34" Range="A1:L1" SheetName="Sheet_G (Transaction History)" />
+                      <ui:ExcelWriteRange AddHeaders="True" DataTable="[Vendor_SOA_DT]" DisplayName="Write Range &quot;A&quot;" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_63" SheetName="Sheet_A(vendor)" StartingCell="A1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4490,7 +4490,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteRange>
-                      <ui:ExcelSetRangeColor Color="[system.Drawing.Color.Yellow]" DisplayName="Set Range Color" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_35" Range="A1:K1" SheetName="Sheet_A(vendor)" />
+                      <ui:ExcelSetRangeColor Color="[system.Drawing.Color.Yellow]" DisplayName="Set Range Color" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_35" Range="A1:K1" SheetName="Sheet_A(vendor)" />
                       <ui:ExcelWriteRange AddHeaders="True" DataTable="[Eligible_Invoices_DT]" DisplayName="Write Range &quot;Eligible Invoices&quot;" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_64" SheetName="Eligible_Invoices" StartingCell="A1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -4703,7 +4703,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelAppendRange>
-                      <ui:ExcelAppendRange DataTable="[Segment_A25D30_DT]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_82" SheetName="[Recon_output_sheetname]">
+                      <ui:ExcelAppendRange DataTable="[Segment_A25D30_DT]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_82" SheetName="[Recon_output_sheetname]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4711,7 +4711,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelAppendRange>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_179">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_179">
                         <ui:CommentOut.Body>
                           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_685">
                             <sap:WorkflowViewStateService.ViewState>
@@ -4772,8 +4772,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelSetRangeColor Color="[system.drawing.Color.GreenYellow]" DisplayName="Set Range Color" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_40" Range="[cell_ourbooks]" SheetName="[Recon_output_sheetname]" />
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_95" Result="[cell_suppliername]" SheetName="[Recon_output_sheetname]" Value="………………………………. (supplier's name)">
+                      <ui:ExcelSetRangeColor Color="[system.drawing.Color.GreenYellow]" DisplayName="Set Range Color" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_40" Range="[cell_ourbooks]" SheetName="[Recon_output_sheetname]" />
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_95" Result="[cell_suppliername]" SheetName="[Recon_output_sheetname]" Value="………………………………. (supplier's name)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -4786,7 +4786,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelWriteCell Cell="[cell_suppliername]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_79" SheetName="[Recon_output_sheetname]" Text="[Supplier_Name]">
+                      <ui:ExcelWriteCell Cell="[cell_suppliername]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_79" SheetName="[Recon_output_sheetname]" Text="[Supplier_Name]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -4794,7 +4794,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteCell>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_96" Result="[cell_PaymentRaisedFor]" SheetName="[Recon_output_sheetname]" Value="………………………(Company name)">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_96" Result="[cell_PaymentRaisedFor]" SheetName="[Recon_output_sheetname]" Value="………………………(Company name)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -4807,7 +4807,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelWriteCell Cell="[cell_PaymentRaisedFor]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_80" SheetName="[Recon_output_sheetname]" Text="[PaymentRaisedfor]">
+                      <ui:ExcelWriteCell Cell="[cell_PaymentRaisedFor]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_80" SheetName="[Recon_output_sheetname]" Text="[PaymentRaisedfor]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4815,7 +4815,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteCell>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_97" Result="[cell_Period]" SheetName="[Recon_output_sheetname]" Value="………………………(MMMYYYY)">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_97" Result="[cell_Period]" SheetName="[Recon_output_sheetname]" Value="………………………(MMMYYYY)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -4828,7 +4828,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelWriteCell Cell="[cell_Period]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_81" SheetName="[Recon_output_sheetname]" Text="[period]">
+                      <ui:ExcelWriteCell Cell="[cell_Period]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_81" SheetName="[Recon_output_sheetname]" Text="[period]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4836,7 +4836,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteCell>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_98" Result="[cell_A]" SheetName="[Recon_output_sheetname]" Value="Value(A)">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_98" Result="[cell_A]" SheetName="[Recon_output_sheetname]" Value="Value(A)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -4849,7 +4849,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelWriteCell Cell="[cell_A]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_82" SheetName="[Recon_output_sheetname]" Text="[SumA.ToString]">
+                      <ui:ExcelWriteCell Cell="[cell_A]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_82" SheetName="[Recon_output_sheetname]" Text="[SumA.ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4962,7 +4962,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteCell>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_104" Result="[Cell_F]" SheetName="[Recon_output_sheetname]" Value="Value(F)">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_104" Result="[Cell_F]" SheetName="[Recon_output_sheetname]" Value="Value(F)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -4975,7 +4975,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelWriteCell Cell="[Cell_F]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_88" SheetName="[Recon_output_sheetname]" Text="[SumF.ToString]">
+                      <ui:ExcelWriteCell Cell="[Cell_F]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_88" SheetName="[Recon_output_sheetname]" Text="[SumF.ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -4983,7 +4983,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteCell>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_105" Result="[cell_G]" SheetName="[Recon_output_sheetname]" Value="Value(G)">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_105" Result="[cell_G]" SheetName="[Recon_output_sheetname]" Value="Value(G)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -4996,7 +4996,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelWriteCell Cell="[cell_G]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_89" SheetName="[Recon_output_sheetname]" Text="[SumG.ToString]">
+                      <ui:ExcelWriteCell Cell="[cell_G]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_89" SheetName="[Recon_output_sheetname]" Text="[SumG.ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
@@ -5004,7 +5004,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteCell>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_106" Result="[cell_H]" SheetName="[Recon_output_sheetname]" Value="Value(H)">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_106" Result="[cell_H]" SheetName="[Recon_output_sheetname]" Value="Value(H)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
@@ -5017,7 +5017,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelLookUpRange>
-                      <ui:ExcelWriteCell Cell="[cell_H]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_90" SheetName="[Recon_output_sheetname]" Text="[SumH.ToString]">
+                      <ui:ExcelWriteCell Cell="[cell_H]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_90" SheetName="[Recon_output_sheetname]" Text="[SumH.ToString]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -5025,7 +5025,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ExcelWriteCell>
-                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_107" Result="[cell_K]" SheetName="[Recon_output_sheetname]" Value="Value(K)">
+                      <ui:ExcelLookUpRange DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_107" Result="[cell_K]" SheetName="[Recon_output_sheetname]" Value="Value(K)">
                         <ui:ExcelLookUpRange.Range>
                           <InArgument x:TypeArguments="x:String">
                             <Literal x:TypeArguments="x:String" Value="" />
