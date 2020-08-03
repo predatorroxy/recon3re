@@ -3,10 +3,11 @@
   "description": "Recon generation with extraction, email segrigation and recon gen",
   "main": "Main.xaml",
   "dependencies": {
+    "BalaReva.Excel.Activities": "[2020.0.0]",
     "Roboyo.CopyMoveDirectory.Activities": "[1.0.1]",
     "UiPath.Excel.Activities": "[2.8.5]",
     "UiPath.Mail.Activities": "[1.8.5]",
-    "UiPath.Python.Activities": "[1.0.7346.28183]",
+    "UiPath.Python.Activities": "[1.0.7495.12930]",
     "UiPath.System.Activities": "[20.4.0]",
     "UiPath.UIAutomation.Activities": "[20.4.1]"
   },

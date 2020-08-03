@@ -582,7 +582,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <State.Transitions>
-                <Transition DisplayName="Rule Exception" sap:VirtualizedContainerService.HintSize="629,2415" sap2010:WorkflowViewState.IdRef="Transition_1">
+                <Transition DisplayName="Rule Exception" sap:VirtualizedContainerService.HintSize="629,2685" sap2010:WorkflowViewState.IdRef="Transition_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">412.05,522 412.05,680 762.5,680 762.5,214.2 534.5,214.2</av:PointCollection>
@@ -595,7 +595,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence DisplayName="BusinessError" sap:VirtualizedContainerService.HintSize="526,2020" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                    <Sequence DisplayName="BusinessError" sap:VirtualizedContainerService.HintSize="526,2290" sap2010:WorkflowViewState.IdRef="Sequence_42">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="body" />
                         <Variable x:TypeArguments="x:String" Name="subject" />
@@ -635,12 +635,31 @@
                           <InArgument x:TypeArguments="x:String">[TransactionItem.Subject]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,230" sap2010:WorkflowViewState.IdRef="CommentOut_11">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[tempMailPath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[strBussinessExceptionPath+mailSubject.trim.Replace(" ","").Replace(".","")+".eml"]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_63">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[tempMailPath]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[strBussinessExceptionPath+mailSubject.trim.Replace(" ","").Replace(".","")+".eml"]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[strBussinessExceptionPath+strMailDate+".eml"]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <If Condition="[file.Exists(tempMailPath)]" sap:VirtualizedContainerService.HintSize="484,208" sap2010:WorkflowViewState.IdRef="If_22">
@@ -783,7 +802,7 @@
                     <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemError Is Nothing And BusinessRuleException is Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
                   </Transition.Condition>
                 </Transition>
-                <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="629,2506" sap2010:WorkflowViewState.IdRef="Transition_4">
+                <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="629,2776" sap2010:WorkflowViewState.IdRef="Transition_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">354.3,522 354.3,642 674.5,642 674.5,230.55 534.5,230.55</av:PointCollection>
@@ -796,7 +815,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence DisplayName="SystemError" sap:VirtualizedContainerService.HintSize="526,2111" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <Sequence DisplayName="SystemError" sap:VirtualizedContainerService.HintSize="526,2381" sap2010:WorkflowViewState.IdRef="Sequence_41">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="body" />
                         <Variable x:TypeArguments="x:String" Name="subject" />
@@ -836,23 +855,42 @@
                           <InArgument x:TypeArguments="x:String">[TransactionItem.Subject]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_61">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[tempMailPath]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[strBussinessExceptionPath+mailSubject.trim.Replace(" ","").Replace(".","")+".eml"]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,230" sap2010:WorkflowViewState.IdRef="CommentOut_10">
                         <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,152" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_47">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_61">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[tempMailPath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[strSystemExceptionPath+mailSubject.trim.Replace(" ","").Replace(".","")+".eml"]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
+                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_62">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[tempMailPath]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[strSystemExceptionPath+strMailDate+".eml"]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[tempMailPath]</OutArgument>
                               </Assign.To>
@@ -907,7 +945,7 @@
                           <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">["Hi Team,&lt;/br&gt;System Error occured during Recon-generation. Please find the details below:&lt;/br&gt;&lt;b&gt;System Error:&lt;/b&gt;"+SystemError.Message+"&lt;/br&gt;TimeStamp:"+now.ToString+"&lt;/br&gt;Please find the screenshot and logs attached&lt;/br&gt;Refer the BotExceptionLog for solution."]</InArgument>
+                          <InArgument x:TypeArguments="x:String" xml:space="preserve">["Hi Team,&lt;br&gt;&lt;/br&gt;System Error occured during Recon-generation. Please find the details below:&lt;br&gt;&lt;/br&gt;&lt;b&gt;System Error:&lt;/b&gt;"+SystemError.Message+" [at location]  "+SystemError.Source+"&lt;br&gt;&lt;/br&gt;TimeStamp:"+now.ToString+"&lt;br&gt;&lt;/br&gt;Please find the screenshot and logs attached&lt;br&gt;&lt;/br&gt;Refer the BotExceptionLog for solution."]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_26">
@@ -918,7 +956,7 @@
                           <InArgument x:TypeArguments="x:String" xml:space="preserve">SystemError occured during Recon generation </InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ExtractedLogstartTime.ToString,now.ToString,&quot;SystemException&quot;,SystemError.Message.ToString,ExtractedCompanyName.trim.ToString,ExtractedAlphaKey.trim.ToString,ExtractedSupplierName.Trim.ToString,ExtractedPeriod_month.trim.ToString+&quot;-&quot;+ExtractedPeriod_year.trim.ToString,ExtractedAmount.ToString}]" DataTable="[DT_BotprocessLogs]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ExtractedLogstartTime.ToString,now.ToString,&quot;SystemException&quot;,SystemError.Source+&quot;    &quot;+SystemError.Message.ToString,ExtractedCompanyName.trim.ToString,ExtractedAlphaKey.trim.ToString,ExtractedSupplierName.Trim.ToString,ExtractedPeriod_month.trim.ToString+&quot;-&quot;+ExtractedPeriod_year.trim.ToString,ExtractedAmount.ToString}]" DataTable="[DT_BotprocessLogs]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
                       <ui:AppendRange DataTable="[DT_BotProcessLogs]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="ReconLogs" WorkbookPath="[BotProcessLogsPath]" />
                       <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[strOutlookProfileName]" Body="[body]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="484,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="True" IsDraft="False" Subject="[subject]" To="[strExceptionMailTo]">
                         <ui:SendOutlookMail.Files>
