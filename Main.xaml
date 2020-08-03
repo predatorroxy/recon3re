@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1269,851</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1529,851</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -232,167 +232,61 @@
                       </Assign>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke EmailExtractionSeq workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="E2E_Process.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="MailFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strOutlookFolderPath.Trim" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="AccountName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strOutlookProfileName.Trim" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_MappingTemplate">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DT_SupplierMappingTemplate" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="VendorNameHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strVendorNameHeader.Trim" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="DomainNameHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDomainHeader.Trim" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="AlphaKeyHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAlphaKeyHeader.Trim" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="snm:MailMessage" x:Key="Mail">
-                            <mva:VisualBasicValue x:TypeArguments="snm:MailMessage" ExpressionText="TransactionItem" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="InputFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="InputFolderPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="BusinessExceptionFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strBussinessExceptionPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="SystemExceptionFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSystemExceptionPath" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="MailFolderPath">[strOutlookFolderPath.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="AccountName">[strOutlookProfileName.Trim]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="DT_MappingTemplate">[DT_SupplierMappingTemplate]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="VendorNameHeader">[strVendorNameHeader.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="DomainNameHeader">[strDomainHeader.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="AlphaKeyHeader">[strAlphaKeyHeader.Trim]</InArgument>
+                          <InArgument x:TypeArguments="snm:MailMessage" x:Key="Mail">[TransactionItem]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="InputFolderPath">[InputFolderPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="BusinessExceptionFolderPath">[strBussinessExceptionPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="SystemExceptionFolderPath">[strSystemExceptionPath]</InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="VendorFolderPath" />
                           <OutArgument x:TypeArguments="x:String" x:Key="VendorExcelFolderPath" />
-                          <OutArgument x:TypeArguments="x:String" x:Key="VendorEmailPath">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedMailPath" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ImageExtension_list">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strImageExtension" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="PDfExtension_list">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPDFExtension" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ExcelExtension_list">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strExcelExtension" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_StartHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableStartHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_EndHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableEndHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_startEndHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableEndStartHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ExtractedFolderPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractedFilesFolderPath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_inoviceHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableInvoiceHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_DateHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableDateHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_VATHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableVATHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_AmountHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableAmountHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_TotalAmountHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableTotalAmountHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strDT_addressHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableAddressHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strTableDurationHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableDateFormatHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intHistoryDuration">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCalenderDuration" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strUsername">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrFoodQuestUsername" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strPassword">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="StrFoodQuestPassword" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakePath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strGlobalBakePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intCompanyAllLoc">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCompanySwitchLoc" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intVendorAllLoc">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intVendorAll_Count" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strTableCreditPeriod">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDurationHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strCompanyHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCompanyHeader" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="intMonthDivision">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intMonthDivision" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakeHistorySheetName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="GlobalBakeSheetName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ReconTemplatePath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ReconTemplatePath" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="DateFormatSplitter">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="DateFormatSplitter" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="strTableUniqueStartHeader">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTableUniqueStartHeader" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedSupplierName">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedSupplierName" />
-                          </OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedPeriod_month">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedPeriod_month" />
-                          </OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedPeriod_year">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedPeriod_year" />
-                          </OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedAlphaKey">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedAlphaKey" />
-                          </OutArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_processLog">
-                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_BotProcessLogs" />
-                          </InOutArgument>
-                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_supplierProcessLog">
-                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="DT_SupplierProcessLogs" />
-                          </InOutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_Advance">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AdvanceTrackerReconciliation" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_FoodQuest">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FoodQuestReconciliation" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_FQBackup">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FoodQuestBackupReconciliation" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_sheetName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TrackerSheetname" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="VBAFormatingPath">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="FormatingVBA" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="x:Double" x:Key="ExtractedTotalAmount">
-                            <mva:VisualBasicReference x:TypeArguments="x:Double" ExpressionText="ExtractedAmount" />
-                          </OutArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="ExtractedDuplicateFlag">
-                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ExtractedDuplicateFLag" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="s:DateTime" x:Key="BotStartTime">
-                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="ExtractedLogstartTime" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="ReconFolderPath">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedReconPath" />
-                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="VendorEmailPath">[ExtractedMailPath]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ImageExtension_list">[strImageExtension]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="PDfExtension_list">[strPDFExtension]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ExcelExtension_list">[strExcelExtension]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_StartHeader">[strTableStartHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_EndHeader">[strTableEndHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_startEndHeader">[strTableEndStartHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ExtractedFolderPath">[ExtractedFilesFolderPath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_inoviceHeader">[strTableInvoiceHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_DateHeader">[strTableDateHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_VATHeader">[strTableVATHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_AmountHeader">[strTableAmountHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_TotalAmountHeader">[strTableTotalAmountHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strDT_addressHeader">[strTableAddressHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strTableDurationHeader">[strTableDateFormatHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intHistoryDuration">[intCalenderDuration]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strUsername">[StrFoodQuestUsername]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strPassword">[StrFoodQuestPassword]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakePath">[strGlobalBakePath]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intCompanyAllLoc">[intCompanySwitchLoc]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intVendorAllLoc">[intVendorAll_Count]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strTableCreditPeriod">[strDurationHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strCompanyHeader">[strCompanyHeader]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intMonthDivision">[intMonthDivision]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="GlobalBakeHistorySheetName">[GlobalBakeSheetName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ReconTemplatePath">[ReconTemplatePath]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="DateFormatSplitter">[DateFormatSplitter]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="strTableUniqueStartHeader">[strTableUniqueStartHeader]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedSupplierName">[ExtractedSupplierName]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedPeriod_month">[ExtractedPeriod_month]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedPeriod_year">[ExtractedPeriod_year]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="ExtractedAlphaKey">[ExtractedAlphaKey]</OutArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_processLog">[DT_BotProcessLogs]</InOutArgument>
+                          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="DT_supplierProcessLog">[DT_SupplierProcessLogs]</InOutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_Advance">[AdvanceTrackerReconciliation]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_FoodQuest">[FoodQuestReconciliation]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_FQBackup">[FoodQuestBackupReconciliation]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ChequeTracker_sheetName">[TrackerSheetname]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="VBAFormatingPath">[FormatingVBA]</InArgument>
+                          <OutArgument x:TypeArguments="x:Double" x:Key="ExtractedTotalAmount">[ExtractedAmount]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="ExtractedDuplicateFlag">[ExtractedDuplicateFLag]</OutArgument>
+                          <InArgument x:TypeArguments="s:DateTime" x:Key="BotStartTime">[ExtractedLogstartTime]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="ReconFolderPath">[ExtractedReconPath]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
@@ -582,7 +476,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <State.Transitions>
-                <Transition DisplayName="Rule Exception" sap:VirtualizedContainerService.HintSize="629,2685" sap2010:WorkflowViewState.IdRef="Transition_1">
+                <Transition DisplayName="Rule Exception" sap:VirtualizedContainerService.HintSize="629,2954" sap2010:WorkflowViewState.IdRef="Transition_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">412.05,522 412.05,680 762.5,680 762.5,214.2 534.5,214.2</av:PointCollection>
@@ -595,7 +489,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence DisplayName="BusinessError" sap:VirtualizedContainerService.HintSize="526,2290" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                    <Sequence DisplayName="BusinessError" sap:VirtualizedContainerService.HintSize="526,2559" sap2010:WorkflowViewState.IdRef="Sequence_42">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="body" />
                         <Variable x:TypeArguments="x:String" Name="subject" />
@@ -712,18 +606,38 @@
                         </Assign.Value>
                       </Assign>
                       <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ExtractedLogstartTime.ToString,now.ToString,&quot;BusinessRuleException&quot;,BusinessRuleException.Message.ToString,ExtractedCompanyName.trim.ToString,ExtractedAlphaKey.trim.ToString,ExtractedSupplierName.Trim.ToString,ExtractedPeriod_month.trim.ToString+&quot;-&quot;+ExtractedPeriod_year.trim.ToString,ExtractedAmount.ToString}]" DataTable="[DT_BotprocessLogs]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[BotProcessLogsPath]" />
                       <ui:AppendRange DataTable="[DT_BotProcessLogs]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="AppendRange_3" SheetName="ReconLogs" WorkbookPath="[BotProcessLogsPath]" />
                       <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[strOutlookProfileName]" Body="[body]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="484,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" IsBodyHtml="True" IsDraft="False" Subject="[subject]" To="[strExceptionMailTo]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                            <InArgument x:TypeArguments="x:String">[opPath]</InArgument>
-                            <InArgument x:TypeArguments="x:String">[BotProcessLogsPath]</InArgument>
-                            <InArgument x:TypeArguments="x:String">[ExtractedMailPath]</InArgument>
-                            <InArgument x:TypeArguments="x:String">[tempMailPath]</InArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="opPath" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="BotProcessLogsPath" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractedMailPath" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String">
+                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tempMailPath" />
+                            </InArgument>
                           </scg:List>
                         </ui:SendOutlookMail.Files>
                       </ui:SendOutlookMail>
-                      <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[tempMailPath]" />
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,192" sap2010:WorkflowViewState.IdRef="CommentOut_13">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[tempMailPath]" />
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                      </ui:CommentOut>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -735,7 +649,7 @@
                     <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="BusinessRuleException IsNot Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
                   </Transition.Condition>
                 </Transition>
-                <Transition sap2010:Annotation.AnnotationText="No need for any action here, in case of success simply go to next transaction" DisplayName="Success" sap:VirtualizedContainerService.HintSize="714,1011" sap2010:WorkflowViewState.IdRef="Transition_5">
+                <Transition sap2010:Annotation.AnnotationText="No need for any action here, in case of success simply go to next transaction" DisplayName="Success" sap:VirtualizedContainerService.HintSize="479,954" sap2010:WorkflowViewState.IdRef="Transition_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">458.25,522 458.25,552 564.5,552 564.5,257.8 534.5,257.8</av:PointCollection>
@@ -749,7 +663,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence DisplayName="Success" sap:VirtualizedContainerService.HintSize="611,585" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <Sequence DisplayName="Success" sap:VirtualizedContainerService.HintSize="376,528" sap2010:WorkflowViewState.IdRef="Sequence_40">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="body" />
                         <Variable x:TypeArguments="x:String" Name="subject" />
@@ -757,31 +671,57 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[ExtractedDuplicateFLag=True]" sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_31">
-                        <If.Then>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_58">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">["Hi Team,&lt;br&gt;&lt;/br&gt;Recon successfully generated, Approve the Recons for voucher creation. Find the details below:&lt;br&gt;&lt;/br&gt;*****DO NOT EDIT******&lt;br&gt;&lt;/br&gt;ReconPath:"+ExtractedReconPath+"&lt;br&gt;&lt;/br&gt;AlphaKey: "+ExtractedAlphaKey+"&lt;br&gt;&lt;/br&gt;SupplierName: "+ExtractedSupplierName+"&lt;br&gt;&lt;/br&gt;TotalAmount: "+ExtractedAmount.ToString+"&lt;br&gt;&lt;/br&gt;Companies:"+ExtractedCompanyName.ToString+"&lt;br&gt;&lt;/br&gt;&lt;b&gt;DUPLICATE INVOICES PRESENT, RECON REPORT MAY GET EFFECTED BY IT, KINDLY VERIFY&lt;/b&gt;"]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Then>
-                        <If.Else>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">["Hi Team,&lt;/br&gt;Recon successfully generated, Approve the Recons for voucher creation. Find the details below:&lt;/br&gt;*****DO NOT EDIT******&lt;/br&gt;ReconPath:"+ExtractedReconPath+"&lt;/br&gt;AlphaKey: "+ExtractedAlphaKey+"&lt;/br&gt;SupplierName: "+ExtractedSupplierName+"&lt;/br&gt;TotalAmount: "+ExtractedAmount.ToString+"&lt;/br&gt;Companies:"+ExtractedCompanyName.ToString]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Else>
-                      </If>
-                      <Assign sap:VirtualizedContainerService.HintSize="569,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="611,299" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[ExtractedDuplicateFLag=True]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_31">
+                              <If.Then>
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_58">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">["Hi Team,&lt;br&gt;&lt;/br&gt;Recon successfully generated, Approve the Recons for voucher creation. Find the details below:&lt;br&gt;&lt;/br&gt;*****DO NOT EDIT******&lt;br&gt;&lt;/br&gt;ReconPath:"+ExtractedReconPath+"&lt;br&gt;&lt;/br&gt;AlphaKey: "+ExtractedAlphaKey+"&lt;br&gt;&lt;/br&gt;SupplierName: "+ExtractedSupplierName+"&lt;br&gt;&lt;/br&gt;TotalAmount: "+ExtractedAmount.ToString+"&lt;br&gt;&lt;/br&gt;Companies:"+ExtractedCompanyName.ToString+"&lt;br&gt;&lt;/br&gt;&lt;b&gt;DUPLICATE INVOICES PRESENT, RECON REPORT MAY GET EFFECTED BY IT, KINDLY VERIFY&lt;/b&gt;"]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Then>
+                              <If.Else>
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">["Hi Team,&lt;/br&gt;Recon successfully generated, Approve the Recons for voucher creation. Find the details below:&lt;/br&gt;*****DO NOT EDIT******&lt;/br&gt;ReconPath:"+ExtractedReconPath+"&lt;/br&gt;AlphaKey: "+ExtractedAlphaKey+"&lt;/br&gt;SupplierName: "+ExtractedSupplierName+"&lt;/br&gt;TotalAmount: "+ExtractedAmount.ToString+"&lt;/br&gt;Companies:"+ExtractedCompanyName.ToString]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
+                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_64">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">["Hi Team,&lt;/br&gt;Recon successfully generated, Please Review and Approve the Recons for voucher creation. Find the details below:&lt;/br&gt;*****DO NOT EDIT******&lt;/br&gt;ReconPath:"+ExtractedReconPath+"&lt;/br&gt;AlphaKey: "+ExtractedAlphaKey+"&lt;/br&gt;SupplierName: "+ExtractedSupplierName+"&lt;/br&gt;TotalAmount: "+ExtractedAmount.ToString+"&lt;/br&gt;Companies:"+ExtractedCompanyName.ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[subject]</OutArgument>
                         </Assign.To>
@@ -789,7 +729,7 @@
                           <InArgument x:TypeArguments="x:String">["ReconGenerated for vendor:"+ExtractedSupplierName+", AlphaKey: "+ExtractedAlphaKey]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[strOutlookProfileName]" Body="[body]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="569,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="True" IsDraft="False" Subject="[subject]" To="[strExceptionMailTo]">
+                      <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[strOutlookProfileName]" Body="[body]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="True" IsDraft="False" Subject="[subject]" To="[strExceptionMailTo]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                             <InArgument x:TypeArguments="x:String" />
@@ -802,7 +742,7 @@
                     <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="SystemError Is Nothing And BusinessRuleException is Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_2" />
                   </Transition.Condition>
                 </Transition>
-                <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="629,2776" sap2010:WorkflowViewState.IdRef="Transition_4">
+                <Transition DisplayName="Error" sap:VirtualizedContainerService.HintSize="629,2904" sap2010:WorkflowViewState.IdRef="Transition_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:PointCollection x:Key="ConnectorLocation">354.3,522 354.3,642 674.5,642 674.5,230.55 534.5,230.55</av:PointCollection>
@@ -815,7 +755,7 @@
                     <x:Reference>__ReferenceID0</x:Reference>
                   </Transition.To>
                   <Transition.Action>
-                    <Sequence DisplayName="SystemError" sap:VirtualizedContainerService.HintSize="526,2381" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <Sequence DisplayName="SystemError" sap:VirtualizedContainerService.HintSize="526,2509" sap2010:WorkflowViewState.IdRef="Sequence_41">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="body" />
                         <Variable x:TypeArguments="x:String" Name="subject" />
@@ -957,26 +897,36 @@
                         </Assign.Value>
                       </Assign>
                       <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ExtractedLogstartTime.ToString,now.ToString,&quot;SystemException&quot;,SystemError.Source+&quot;    &quot;+SystemError.Message.ToString,ExtractedCompanyName.trim.ToString,ExtractedAlphaKey.trim.ToString,ExtractedSupplierName.Trim.ToString,ExtractedPeriod_month.trim.ToString+&quot;-&quot;+ExtractedPeriod_year.trim.ToString,ExtractedAmount.ToString}]" DataTable="[DT_BotprocessLogs]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[BotProcessLogsPath]" />
                       <ui:AppendRange DataTable="[DT_BotProcessLogs]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="484,115" sap2010:WorkflowViewState.IdRef="AppendRange_2" SheetName="ReconLogs" WorkbookPath="[BotProcessLogsPath]" />
                       <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="[strOutlookProfileName]" Body="[body]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="484,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="True" IsDraft="False" Subject="[subject]" To="[strExceptionMailTo]">
                         <ui:SendOutlookMail.Files>
                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                            <InArgument x:TypeArguments="x:String">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="opPath" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="BotProcessLogsPath" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ExtractedMailPath" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String">
-                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="tempMailPath" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String">[opPath]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[BotProcessLogsPath]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[ExtractedMailPath]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[tempMailPath]</InArgument>
                           </scg:List>
                         </ui:SendOutlookMail.Files>
                       </ui:SendOutlookMail>
-                      <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="Delete_2" Path="[tempMailPath]" />
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Delete ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delete_2" Path="[tempMailPath]" />
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -1793,36 +1743,16 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="For Botside path" DisplayName="Invoke FolderStructure workflow" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="FolderStructure.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strBotFolderPath" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="RunType">
-                      <Literal x:TypeArguments="x:String">bot</Literal>
-                    </InArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="BusinessExceptionPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strBussinessExceptionPath" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="SystemExceptionPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strSystemExceptionPath" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="InputFolderPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="InputFolderPath" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="ProcessedLogsFolderPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ProcessedLogsFolderPath" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="RetryFolderaPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="RetryFolderaPath" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="SuccessFolderPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="SuccessFolderPath" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="ExtractedFilesFolderPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ExtractedFilesFolderPath" />
-                    </OutArgument>
-                    <OutArgument x:TypeArguments="x:String" x:Key="ScreenShotFolderPath">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="Screenshotfolderpath" />
-                    </OutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="FolderPath">[strBotFolderPath]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="RunType">bot</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="BusinessExceptionPath">[strBussinessExceptionPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="SystemExceptionPath">[strSystemExceptionPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="InputFolderPath">[InputFolderPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="ProcessedLogsFolderPath">[ProcessedLogsFolderPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="RetryFolderaPath">[RetryFolderaPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="SuccessFolderPath">[SuccessFolderPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="ExtractedFilesFolderPath">[ExtractedFilesFolderPath]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="ScreenShotFolderPath">[Screenshotfolderpath]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1832,12 +1762,8 @@
                 </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="For ClientSide path" DisplayName="Invoke FolderStructure workflow" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="FolderStructure.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="FolderPath">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strClientFolderPath" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="RunType">
-                      <Literal x:TypeArguments="x:String">Client</Literal>
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="FolderPath">[strClientFolderPath]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="RunType">Client</InArgument>
                     <OutArgument x:TypeArguments="x:String" x:Key="BusinessExceptionPath" />
                     <OutArgument x:TypeArguments="x:String" x:Key="SystemExceptionPath" />
                     <OutArgument x:TypeArguments="x:String" x:Key="InputFolderPath" />
@@ -1865,7 +1791,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:BuildDataTable DataTable="[DT_BotProcessLogs]" DisplayName="Build Data Table BotProcessLog" sap:VirtualizedContainerService.HintSize="813,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Start_Time&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;End_Time&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Exception_Description&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Company_Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Alpha_Key&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Supplier_Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Period&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total_Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                <ui:BuildDataTable DataTable="[DT_SupplierProcessLogs]" DisplayName="Build Data Table Supplier Process Logs" sap:VirtualizedContainerService.HintSize="813,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TimeStamp&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SupplierName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;AlphaKey&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CompanyName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Processed_Month&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Processed_Year&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;FutureDate_SOA&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;File_Path&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                <ui:BuildDataTable DataTable="[DT_SupplierProcessLogs]" DisplayName="Build Data Table Supplier Process Logs" sap:VirtualizedContainerService.HintSize="813,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;TimeStamp&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SupplierName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;AlphaKey&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CompanyName&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Processed_Month&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Processed_Year&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Status&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;FutureDate_SOA&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;File_Path&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
                 <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="813,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">

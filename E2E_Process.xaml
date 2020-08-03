@@ -59,7 +59,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1847,9992</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1847,9794</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EmailExtractionSeq_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -119,7 +119,7 @@
       <AssemblyReference>UiPath.Python</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="1857,9887" sap2010:WorkflowViewState.IdRef="Sequence_27">
+  <Sequence DisplayName="ProcessSequence" sap:VirtualizedContainerService.HintSize="1857,9649" sap2010:WorkflowViewState.IdRef="Sequence_27">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SOAInvoiceHeader" />
       <Variable x:TypeArguments="x:String" Name="SOADateHeader" />
@@ -152,7 +152,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Vendor name and alpha key extraction.&#xA;Download attachment and file movement" DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="1815,6741" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    <Sequence sap2010:Annotation.AnnotationText="Vendor name and alpha key extraction.&#xA;Download attachment and file movement" DisplayName="EmailExtractionSeq" sap:VirtualizedContainerService.HintSize="1815,6472" sap2010:WorkflowViewState.IdRef="Sequence_26">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="strMailFrom" />
         <Variable x:TypeArguments="x:String" Name="strMailSubject" />
@@ -239,7 +239,7 @@
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1773,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Extracted Domain: &quot;+strDomainName.ToString]" />
-      <Sequence sap2010:Annotation.AnnotationText="Vendor Alpha key and Vendor name determination&#xA;Domain Check&#xA;Body and Subject check" DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="1773,5037" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence sap2010:Annotation.AnnotationText="Vendor Alpha key and Vendor name determination&#xA;Domain Check&#xA;Body and Subject check" DisplayName="VendorDeterminationFromDomainName/Body/Subject" sap:VirtualizedContainerService.HintSize="1773,4768" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="BoolAlternateName" />
           <Variable x:TypeArguments="x:Boolean" Name="BoolFoodQuestFlag" />
@@ -251,13 +251,13 @@
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each row in mapping template" DataTable="[DT_MappingTemplate]" DisplayName="For Each Row in DT_MappingTemplate" sap:VirtualizedContainerService.HintSize="1731,4740" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each row in mapping template" DataTable="[DT_MappingTemplate]" DisplayName="For Each Row in DT_MappingTemplate" sap:VirtualizedContainerService.HintSize="1731,4471" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="each vendor" sap:VirtualizedContainerService.HintSize="1681,4561" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence DisplayName="each vendor" sap:VirtualizedContainerService.HintSize="1681,4292" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="tempKey" />
                   <Variable x:TypeArguments="x:String" Name="tempName" />
@@ -369,8 +369,25 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1639,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[strDomainName]" />
-                <If sap2010:Annotation.AnnotationText="Domain name check" Condition="[strDomainName.ToLower.Contains(foodQuestDomain) or strDomainName.ToLower.Equals(foodQuestDomain)]" sap:VirtualizedContainerService.HintSize="1639,2222" sap2010:WorkflowViewState.IdRef="If_39">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1639,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[strDomainName]" />
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <If sap2010:Annotation.AnnotationText="Domain name check" Condition="[strDomainName.ToLower.Contains(foodQuestDomain) or strDomainName.ToLower.Equals(foodQuestDomain)]" sap:VirtualizedContainerService.HintSize="1639,1961" sap2010:WorkflowViewState.IdRef="If_39">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -397,14 +414,14 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Domain!=&quot;FoodQuest.ae&quot;" sap:VirtualizedContainerService.HintSize="1218,2043" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                    <Sequence DisplayName="Domain!=&quot;FoodQuest.ae&quot;" sap:VirtualizedContainerService.HintSize="1218,1782" sap2010:WorkflowViewState.IdRef="Sequence_56">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1176,91" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;Domain name not as foodquest: normal execution&quot;]" />
-                      <If Condition="[strDomainName.ToLower.Trim.Contains(tempDomain.ToLower.Trim) or strDomainName.ToLower.trim.Equals(tempDomain.trim.ToLower)]" DisplayName="If VendorCheckByFrom" sap:VirtualizedContainerService.HintSize="1176,1820" sap2010:WorkflowViewState.IdRef="If_15">
+                      <If Condition="[strDomainName.ToLower.Trim.Contains(tempDomain.ToLower.Trim) or strDomainName.ToLower.trim.Equals(tempDomain.trim.ToLower)]" DisplayName="If VendorCheckByFrom" sap:VirtualizedContainerService.HintSize="1176,1559" sap2010:WorkflowViewState.IdRef="If_15">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -412,7 +429,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="Multiple AlphaKey check" sap:VirtualizedContainerService.HintSize="797,1672" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <Sequence DisplayName="Multiple AlphaKey check" sap:VirtualizedContainerService.HintSize="797,1411" sap2010:WorkflowViewState.IdRef="Sequence_32">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:String" Name="tempAlpha" />
                               <Variable x:TypeArguments="sd:DataTable" Name="dt_temp1" />
@@ -452,7 +469,7 @@
                                 </scg:List>
                               </ui:FilterDataTable.SelectColumns>
                             </ui:FilterDataTable>
-                            <ui:FilterDataTable DataTable="[DT_MappingTemplate]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="755,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_tempIn]" SelectColumnsMode="Keep">
+                            <ui:FilterDataTable DataTable="[dt_tempIn]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="755,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_tempIn]" SelectColumnsMode="Keep">
                               <ui:FilterDataTable.Filters>
                                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                   <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -465,17 +482,34 @@
                               </ui:FilterDataTable.SelectColumns>
                             </ui:FilterDataTable>
                             <ui:RemoveDuplicateRows DataTable="[dt_tempIn]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dt_tempIn]" />
-                            <Sequence DisplayName="Comment it" sap:VirtualizedContainerService.HintSize="755,312" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,51" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Sequence DisplayName="Comment it" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:OutputDataTable DataTable="[dt_tempIn]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[tempIn]" />
+                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[tempIn]" />
+                                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[dt_tempIn.Rows.Count]" />
+                                  </Sequence>
+                                </Sequence>
+                              </ui:CommentOut.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:OutputDataTable DataTable="[dt_tempIn]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[tempIn]" />
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[tempIn]" />
-                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[dt_tempIn.Rows.Count]" />
-                            </Sequence>
+                            </ui:CommentOut>
                             <If Condition="[dt_tempIn.Rows.Count&gt;1]" sap:VirtualizedContainerService.HintSize="755,837" sap2010:WorkflowViewState.IdRef="If_38">
                               <If.Then>
                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;More than one alpha key present&quot;]" />
@@ -2125,7 +2159,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="1815,2876" sap2010:WorkflowViewState.IdRef="Sequence_29">
+    <Sequence DisplayName="ExcelExtraction" sap:VirtualizedContainerService.HintSize="1815,2907" sap2010:WorkflowViewState.IdRef="Sequence_29">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counter" />
         <Variable x:TypeArguments="x:Boolean" Name="SheetTrimmerFlag" />
@@ -2149,13 +2183,13 @@
           <Throw Exception="[New BusinessRuleException(&quot;BE:12: Excel file count is zero, either the mail does not contain any excel/attachment.Check Attachments&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
         </If.Else>
       </If>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each excel file" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="937,2436" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each excel file" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="937,2467" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Directory.GetFiles(VendorExcelFolderPath)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="ExcelPath" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="901,2271" sap2010:WorkflowViewState.IdRef="Sequence_28">
+            <Sequence DisplayName="EachExcel" sap:VirtualizedContainerService.HintSize="901,2302" sap2010:WorkflowViewState.IdRef="Sequence_28">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="ExcelSheetName" />
                 <Variable x:TypeArguments="x:String" Name="strSOApath" />
@@ -2172,7 +2206,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1153,670" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="771,670" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="scg:List(x:String)" Name="ExcelSheets" />
                       </Sequence.Variables>
@@ -2636,7 +2670,7 @@
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Transaction history download not required&quot;]" />
                 </If.Else>
               </If>
-              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="859,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_30">
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="859,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_30">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_250">
@@ -2653,6 +2687,14 @@
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:String">[ExtractedCompanyName]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_252">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[ExtractedCompanyName]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[strCompanyList]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                   </scg:List>
