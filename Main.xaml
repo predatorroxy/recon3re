@@ -815,7 +815,7 @@
                           <OutArgument x:TypeArguments="x:String">[body]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">["Hi Team,&lt;/br&gt;Recon successfully generated, Please Review and Approve the Recons for voucher creation. Find the details below:&lt;/br&gt;*****DO NOT EDIT******&lt;/br&gt;ReconPath:"+ExtractedReconPath+"&lt;/br&gt;AlphaKey: "+ExtractedAlphaKey+"&lt;/br&gt;SupplierName: "+ExtractedSupplierName+"&lt;/br&gt;TotalAmount: "+ExtractedAmount.ToString+"&lt;/br&gt;Companies:"+ExtractedCompanyName.ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String">["Hi Team,&lt;/br&gt;Recon successfully generated, Please Review and Approve the Recons for voucher creation. Find the details below:&lt;/br&gt;*****DO NOT EDIT******&lt;/br&gt;ReconPath:"+ExtractedReconPath+"&lt;/br&gt;AlphaKey: "+ExtractedAlphaKey+"&lt;/br&gt;SupplierName: "+ExtractedSupplierName+"&lt;/br&gt;TotalAmount: "+ExtractedAmount.ToString+"&lt;/br&gt;Companies:"+ExtractedCompanyList.ToString]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">

@@ -1,6 +1,7 @@
 Sub Apply_Format()
 
-
+	Worksheets("Sheet1").visible = False
+	Worksheets("Eligible_Invoices").visible = False
 
 '''Autosize columns
 
